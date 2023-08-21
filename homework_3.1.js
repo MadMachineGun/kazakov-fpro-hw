@@ -1,5 +1,6 @@
-let a = parseFloat(prompt("Tape first number:"));
-let b = parseFloat(prompt("Tape second number:"));
+
+let a = parseFloat(prompt("Enter the first number:"));
+let b = parseFloat(prompt("Enter the second number:"));
 
 let add = a + b;
 let sub = a - b;
@@ -7,9 +8,9 @@ let mult = a * b;
 let div = a / b;
 
 let resultMessage = `Results:
-Add: ${add}
-Sub: ${sub}
-Mult: ${mult}
-Div: ${div}`;
+${a} + ${b} = ${add}
+${a} - ${b} = ${sub}
+${a} * ${b} = ${mult}
+${a} / ${b} = ${div}`;
 
 alert(resultMessage);
