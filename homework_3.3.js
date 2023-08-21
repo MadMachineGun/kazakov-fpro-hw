@@ -24,7 +24,7 @@ if (birthYear === null || city === null || favoriteSport === null) {
     let champions = {
         "football": "Lionel Messi",
         "basketball": "LeBron James",
-        "tennis": "Stewart Errol Ungar"
+        "tennis": "Boris Franz Becker"
     };
 
     if (favoriteSport in champions) {
