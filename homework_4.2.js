@@ -89,16 +89,36 @@ if (!isNaN(num) && num > 0) {
             }
         }
     }
-    console.log("Number of even divisors a number", num,":\n", evenDivisorsCount);
+    console.log("Number of even divisors for", num,":", evenDivisorsCount);
 } else {
     console.log("Invalid input!");
 }
 
-//Task_11:
+//Task_11: Визначити кількість його парних дільників.
+console.log("Task 11: Знайти суму його парних дільників.");
+let x = prompt("Enter a natural number:");
+x = +x;
+let evenDivisorsSum = 0;
 
+if (!isNaN(num) && num > 0) {
+    for (let i = 1; i <= x; i++) {
+        if (x % i === 0 && i % 2 === 0) {
+            evenDivisorsSum += i;
+        }
+    }
 
+    console.log("Sum of even divisors for the number", x, ":", evenDivisorsSum);
+} else {
+    console.log("Invalid input!");
+}
 
-//Task_12:
+//Task_12: Надрукувати повну таблицю множення від 1 до 10.
+console.log("Task 12: Надрукувати повну таблицю множення від 1 до 10.");
+for (let i = 1; i <= 10; i++) {
+    for (let j = 1; j <= 10; j++) {
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
 
-
+console.log("THE WORK IS DONE!");
 
