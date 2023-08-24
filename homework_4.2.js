@@ -53,16 +53,22 @@ console.log("Task 7: Вивести суму лише парних чисел в
 
 //Task_8: Вивести всі числа в діапазоні від 100 до 200 кратні 3.
 console.log("Task 8: Вивести всі числа в діапазоні від 100 до 200 кратні 3.")
+// for (let i = 100; i <= 200; i++) {
+//     if (i % 3 === 0) {
+//         console.log(i);
+//     }
+// }
+let numbers = [];
 for (let i = 100; i <= 200; i++) {
     if (i % 3 === 0) {
-        console.log(i);
+        numbers.push(i);
     }
 }
+console.log(numbers.join(", "));
 
 //Task_9: Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
 console.log("Task 9: Дано натуральне число. Знайти та вивести на сторінку всі його дільники.")
-let a = prompt("Enter a natural number:");
-a = +a;
+let a = +prompt("Enter a natural number:");
 if (!isNaN(a) && a > 0) {
     console.log("Divisors of a number", a);
     for (let i = 1; i <= a; i++) {
@@ -76,30 +82,25 @@ if (!isNaN(a) && a > 0) {
 
 //Task_10: Визначити кількість його парних дільників.
 console.log("Task 10: Визначити кількість його парних дільників.");
-let num = prompt("Enter a natural number:");
-num = +num;
+let num = +prompt("Enter a natural number:");
 let evenDivisorsCount = 0;
 if (!isNaN(num) && num > 0) {
-    // console.log(`Divisors of ${num}:`);
     for (let i = 1; i <= num; i++) {
         if (num % i === 0) {
-            // console.log(i);
             if (i % 2 === 0) {
                 evenDivisorsCount++;
             }
         }
     }
-    console.log("Number of even divisors for", num,":", evenDivisorsCount);
+    console.log("Number of even divisors for", num, ":", evenDivisorsCount);
 } else {
     console.log("Invalid input!");
 }
 
-//Task_11: Визначити кількість його парних дільників.
+//Task_11: Знайти суму його парних дільників.
 console.log("Task 11: Знайти суму його парних дільників.");
-let x = prompt("Enter a natural number:");
-x = +x;
+let x = +prompt("Enter a natural number:");
 let evenDivisorsSum = 0;
-
 if (!isNaN(num) && num > 0) {
     for (let i = 1; i <= x; i++) {
         if (x % i === 0 && i % 2 === 0) {
@@ -107,7 +108,7 @@ if (!isNaN(num) && num > 0) {
         }
     }
 
-    console.log("Sum of even divisors for the number", x, ":", evenDivisorsSum);
+    console.log("Sum of even divisors for", x, ":", evenDivisorsSum);
 } else {
     console.log("Invalid input!");
 }
