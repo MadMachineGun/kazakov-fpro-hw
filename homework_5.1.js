@@ -51,7 +51,7 @@ let length = +prompt("Enter the length of array:", 0);
 if (!isNaN(length) && length > 0) {
     let userArray = [];
     for (let i = 0; i < length; i++) {
-        let element = +prompt("Enter the element: ", i);
+        let element = +prompt("Enter the element:${i + 1}");
         userArray.push(element);
     }
     console.log("User array:", userArray);
