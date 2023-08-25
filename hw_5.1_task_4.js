@@ -12,15 +12,27 @@ document.getElementById("runButton").addEventListener("click", function () {
         const arrayContentElement = document.getElementById("arrayContent");
         arrayContentElement.innerHTML = "";
 
+        const task1Output = document.createElement("p");
+        task1Output.textContent = "Task 1: Create an array, its length and elements specified by the user.";
+        arrayContentElement.appendChild(task1Output);
+
         const consoleOutput = document.createElement("p");
         consoleOutput.textContent = "User array: " + userArray;
         arrayContentElement.appendChild(consoleOutput);
+
+        const task2Output = document.createElement("p");
+        task2Output.textContent = "Task 2: Sort the array in ascending order.";
+        arrayContentElement.appendChild(task2Output);
 
         userArray.sort((a, b) => a - b);
 
         const sortedOutput = document.createElement("p");
         sortedOutput.textContent = "Sorted array: " + userArray;
         arrayContentElement.appendChild(sortedOutput);
+
+        const task3Output = document.createElement("p");
+        task3Output.textContent = "Task 3: Remove elements from the array from 2 to 4 (inclusive).";
+        arrayContentElement.appendChild(task3Output);
 
         if (userArray.length >= 5) {
             userArray.splice(1, 4);
