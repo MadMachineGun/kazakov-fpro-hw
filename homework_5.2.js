@@ -1,6 +1,6 @@
-console.log("User array: [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47]");
-const array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 
+const array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
+console.log("User array:", array);
 // Task 1: Знайти суму та кількість позитивних елементів.
 const positiveStats = array.reduce((stats, currentValue) => {
     if (currentValue > 0) {
@@ -116,7 +116,7 @@ const maxElement = array.reduce((max, currentValue) => {
 
 const modifiedArray = array.map((value) => value === maxElement.value ? value : 0);
 
-console.log("Task 10:\nнайти найбільший серед елементів масиву, остальні обнулити.");
+console.log("Task 10:\nЗнайти найбільший серед елементів масиву, остальні обнулити.");
 console.log("Max value:", maxElement.value);
 console.log("Modified array:", modifiedArray);
 
