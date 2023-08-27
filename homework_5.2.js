@@ -1,3 +1,126 @@
+console.log("User array: [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47]");
+const array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
+
+// Task 1: Знайти суму та кількість позитивних елементів.
+const positiveStats = array.reduce((stats, currentValue) => {
+    if (currentValue > 0) {
+        stats.sum += currentValue;
+        stats.count++;
+    }
+    return stats;
+}, {sum: 0, count: 0});
+
+console.log("Task 1:\nЗнайти суму та кількість позитивних елементів.");
+console.log("Sum of positive elements:", positiveStats.sum);
+console.log("Number of positive elements:", positiveStats.count);
+
+// Task 2: Знайти мінімальний елемент масиву та його порядковий номер.
+const minInfo = array.reduce((min, currentValue, currentIndex) => {
+    if (currentValue < min.value) {
+        min.value = currentValue;
+        min.index = currentIndex;
+    }
+    return min;
+}, {value: array[0], index: 0});
+
+console.log("Task 2:\nЗнайти мінімальний елемент масиву та його порядковий номер.");
+console.log("Min value:", minInfo.value);
+console.log("Index of min value:", minInfo.index);
+
+// Task 3: Знайти максимальний елемент масиву та його порядковий номер.
+const maxInfo = array.reduce((max, currentValue, currentIndex) => {
+    if (currentValue > max.value) {
+        max.value = currentValue;
+        max.index = currentIndex;
+    }
+    return max;
+}, {value: array[0], index: 0});
+
+console.log("Task 3:\nЗнайти максимальний елемент масиву та його порядковий номер.");
+console.log("Max value:", maxInfo.value);
+console.log("Index of max value:", maxInfo.index);
+
+// Task 4: Визначити кількість негативних елементів.
+const negativeCount = array.reduce((count, currentValue) => {
+    if (currentValue < 0) {
+        count++;
+    }
+    return count;
+}, 0);
+
+console.log("Task 4:\nВизначити кількість негативних елементів.");
+console.log("Number of negative elements:", negativeCount);
+
+// Task 5: Знайти кількість непарних позитивних елементів.
+const oddPositiveCount = array.reduce((count, currentValue) => {
+    if (currentValue > 0 && currentValue % 2 !== 0) {
+        count++;
+    }
+    return count;
+}, 0);
+
+console.log("Task 5:\nЗнайти кількість непарних позитивних елементів.");
+console.log("Number of odd positive elements:", oddPositiveCount);
+
+// Task 6: Знайти кількість парних позитивних елементів.
+const evenPositiveCount = array.reduce((count, currentValue) => {
+    if (currentValue > 0 && currentValue % 2 === 0) {
+        count++;
+    }
+    return count;
+}, 0);
+
+console.log("Task 6:\nЗнайти кількість парних позитивних елементів.");
+console.log("Number of even positive elements:", evenPositiveCount);
+
+// Task 7: Знайти суму парних позитивних елементів.
+const evenPositiveSum = array.reduce((sum, currentValue) => {
+    if (currentValue > 0 && currentValue % 2 === 0) {
+        sum += currentValue;
+    }
+    return sum;
+}, 0);
+
+console.log("Task 7:\nЗнайти суму парних позитивних елементів.");
+console.log("Sum of even positive elements:", evenPositiveSum);
+
+// Task 8: Знайти суму непарних позитивних елементів.
+const oddPositiveSum = array.reduce((sum, currentValue) => {
+    if (currentValue > 0 && currentValue % 2 !== 0) {
+        sum += currentValue;
+    }
+    return sum;
+}, 0);
+
+console.log("Task 8:\nЗнайти суму непарних позитивних елементів.");
+console.log("Sum of odd positive elements:", oddPositiveSum);
+
+// Task 9: Знайти добуток позитивних елементів.
+const positiveProduct = array.reduce((product, currentValue) => {
+    if (currentValue > 0) {
+        product *= currentValue;
+    }
+    return product;
+}, 1);
+
+console.log("Task 9:\nЗнайти добуток позитивних елементів.");
+console.log("Product of positive elements:", positiveProduct);
+
+// Task 10: Знайти найбільший серед елементів масиву, остальні обнулити.
+const maxElement = array.reduce((max, currentValue) => {
+    if (currentValue > max.value) {
+        max.value = currentValue;
+    }
+    return max;
+}, {value: array[0]});
+
+const modifiedArray = array.map((value) => value === maxElement.value ? value : 0);
+
+console.log("Task 10:\nнайти найбільший серед елементів масиву, остальні обнулити.");
+console.log("Max value:", maxElement.value);
+console.log("Modified array:", modifiedArray);
+
+
 // // Task_1
 // const array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 // let sum = 0;
@@ -153,124 +276,3 @@
 // console.log("Task 10:\nЗнайти найбільший серед елементів масиву, остальні обнулити.");
 // console.log("Max value:", maxElement[maxInd]);
 // console.log("Modified array:", maxElement);
-console.log("User array: [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47]");
-const array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
-
-// Task 1: Знайти суму та кількість позитивних елементів.
-const positiveStats = array.reduce((stats, currentValue) => {
-    if (currentValue > 0) {
-        stats.sum += currentValue;
-        stats.count++;
-    }
-    return stats;
-}, {sum: 0, count: 0});
-
-console.log("Task 1:\nЗнайти суму та кількість позитивних елементів.");
-console.log("Sum of positive elements:", positiveStats.sum);
-console.log("Number of positive elements:", positiveStats.count);
-
-// Task 2: Знайти мінімальний елемент масиву та його порядковий номер.
-const minInfo = array.reduce((min, currentValue, currentIndex) => {
-    if (currentValue < min.value) {
-        min.value = currentValue;
-        min.index = currentIndex;
-    }
-    return min;
-}, {value: array[0], index: 0});
-
-console.log("Task 2:\nЗнайти мінімальний елемент масиву та його порядковий номер.");
-console.log("Min value:", minInfo.value);
-console.log("Index of min value:", minInfo.index);
-
-// Task 3: Знайти максимальний елемент масиву та його порядковий номер.
-const maxInfo = array.reduce((max, currentValue, currentIndex) => {
-    if (currentValue > max.value) {
-        max.value = currentValue;
-        max.index = currentIndex;
-    }
-    return max;
-}, {value: array[0], index: 0});
-
-console.log("Task 3:\nЗнайти максимальний елемент масиву та його порядковий номер.");
-console.log("Max value:", maxInfo.value);
-console.log("Index of max value:", maxInfo.index);
-
-// Task 4: Визначити кількість негативних елементів.
-const negativeCount = array.reduce((count, currentValue) => {
-    if (currentValue < 0) {
-        count++;
-    }
-    return count;
-}, 0);
-
-console.log("Task 4:\nВизначити кількість негативних елементів.");
-console.log("Number of negative elements:", negativeCount);
-
-// Task 5: Знайти кількість непарних позитивних елементів.
-const oddPositiveCount = array.reduce((count, currentValue) => {
-    if (currentValue > 0 && currentValue % 2 !== 0) {
-        count++;
-    }
-    return count;
-}, 0);
-
-console.log("Task 5:\nЗнайти кількість непарних позитивних елементів.");
-console.log("Number of odd positive elements:", oddPositiveCount);
-
-// Task 6: Знайти кількість парних позитивних елементів.
-const evenPositiveCount = array.reduce((count, currentValue) => {
-    if (currentValue > 0 && currentValue % 2 === 0) {
-        count++;
-    }
-    return count;
-}, 0);
-
-console.log("Task 6:\nЗнайти кількість парних позитивних елементів.");
-console.log("Number of even positive elements:", evenPositiveCount);
-
-// Task 7: Знайти суму парних позитивних елементів.
-const evenPositiveSum = array.reduce((sum, currentValue) => {
-    if (currentValue > 0 && currentValue % 2 === 0) {
-        sum += currentValue;
-    }
-    return sum;
-}, 0);
-
-console.log("Task 7:\nЗнайти суму парних позитивних елементів.");
-console.log("Sum of even positive elements:", evenPositiveSum);
-
-// Task 8: Знайти суму непарних позитивних елементів.
-const oddPositiveSum = array.reduce((sum, currentValue) => {
-    if (currentValue > 0 && currentValue % 2 !== 0) {
-        sum += currentValue;
-    }
-    return sum;
-}, 0);
-
-console.log("Task 8:\nЗнайти суму непарних позитивних елементів.");
-console.log("Sum of odd positive elements:", oddPositiveSum);
-
-// Task 9: Знайти добуток позитивних елементів.
-const positiveProduct = array.reduce((product, currentValue) => {
-    if (currentValue > 0) {
-        product *= currentValue;
-    }
-    return product;
-}, 1);
-
-console.log("Task 9:\nЗнайти добуток позитивних елементів.");
-console.log("Product of positive elements:", positiveProduct);
-
-// Task 10: Знайти найбільший серед елементів масиву, остальні обнулити.
-const maxElement = array.reduce((max, currentValue) => {
-    if (currentValue > max.value) {
-        max.value = currentValue;
-    }
-    return max;
-}, {value: array[0]});
-
-const modifiedArray = array.map((value) => value === maxElement.value ? value : 0);
-
-console.log("Task 10:\nнайти найбільший серед елементів масиву, остальні обнулити.");
-console.log("Max value:", maxElement.value);
-console.log("Modified array:", modifiedArray);
