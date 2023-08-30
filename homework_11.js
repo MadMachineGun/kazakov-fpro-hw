@@ -1,7 +1,14 @@
+
 console.log("Task 11: Реалізуйте функцію removeElement(array, item), щоб видалити елемент item з масиву array.");
+
 function getUserInput(message) {
     return prompt(message);
 }
+
+function displayArray(array) {
+    console.log("Ваш масив:", array.join(", "));
+}
+
 function main() {
     const length = parseInt(getUserInput("Введіть довжину масиву:"));
 
@@ -9,20 +16,22 @@ function main() {
         console.log("Неправильне значення довжини масиву.");
         return;
     }
+
     const array = [];
 
-    for (let i = 0; i < length; i++) {
+    const getArrayValue = (i) => {
         const value = parseFloat(getUserInput(`Введіть значення для елемента ${i + 1}:`));
 
         if (!isNaN(value)) {
             array.push(value);
         } else {
             console.log(`Неправильне значення для елемента ${i + 1}.`);
-            i--;
         }
-    }
+    };
 
-    console.log("Ваш масив:", array);
+    Array.from({ length }, (_, i) => i).forEach(getArrayValue);
+
+    displayArray(array);
 
     const itemToDelete = parseFloat(getUserInput("Введіть значення елемента для видалення:"));
 
@@ -31,7 +40,7 @@ function main() {
 
         if (indexToDelete !== -1) {
             array.splice(indexToDelete, 1);
-            console.log("Результат:", array);
+            displayArray(array);
         } else {
             console.log("Елемент для видалення не знайдений.");
         }
@@ -41,4 +50,3 @@ function main() {
 }
 
 main();
-
