@@ -110,7 +110,6 @@ function fill2DArray() {
 
     return resultArray;
 }
-
 const twoDArray = fill2DArray();
 
 if (twoDArray) {
