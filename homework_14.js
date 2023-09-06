@@ -104,12 +104,12 @@ function fill2DArray() {
     const resultArray = new Array(numRows).fill(null).map(() => new Array(numCols).fill(null));
 
     resultArray.forEach((row, rowIndex) => row.forEach((_, colIndex) => {
-        const userInput = prompt(`Введіть значення для елементу (${rowIndex}, ${colIndex}):`);
-        row[colIndex] = userInput;
+        row[colIndex] = prompt(`Введіть значення для елементу (${rowIndex}, ${colIndex}):`);
     }));
 
     return resultArray;
 }
+
 const twoDArray = fill2DArray();
 
 if (twoDArray) {
@@ -121,7 +121,10 @@ if (twoDArray) {
 console.log("Task_14.4: Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(\" hello world\", ['l', 'd'])' поверне нам \"heo wor\". Вихідний рядок та символи для видалення задає користувач.");
 
 const inputString = prompt("Введіть два слова через пробіл:");
-if (!inputString) {
+
+if (inputString === null) {
+    console.error("Ви відмінили ввід. Будь ласка, введіть два слова.");
+} else if (inputString.trim() === "") {
     console.error("Помилка: Ви не ввели слова.");
 } else {
     const words = inputString.split(' ');
@@ -133,15 +136,21 @@ if (!inputString) {
 
         const removeCharsFromWord = (word, charsToRemove) =>
             word.split('').filter(char => !charsToRemove.includes(char)).join('');
-        const charsToRemove = prompt("Введіть символи для видалення (через кому або пробіл):").split(/[,\s]+/);
-        const result = [firstWord, secondWord].map(word =>
-            removeCharsFromWord(word, charsToRemove)).join(' ');
 
-        console.log("Оригінальні слова:", firstWord, secondWord);
-        console.log("Результат:", result);
+        const charsToRemoveInput = prompt("Введіть символи для видалення (через кому або пробіл):");
+
+        if (charsToRemoveInput === null) {
+            console.error("Ви відмінили ввід символів для видалення.");
+        } else {
+            const charsToRemove = charsToRemoveInput.split(/[,\s]+/);
+            const result = [firstWord, secondWord].map(word =>
+                removeCharsFromWord(word, charsToRemove)).join(' ');
+
+            console.log("Оригінальні слова:", firstWord, secondWord);
+            console.log("Результат:", result);
+        }
     }
 }
-
 
 // async function calculateAverage(numbers) {
 //     const filteredNumbers = numbers.filter(item => typeof item === 'number');
