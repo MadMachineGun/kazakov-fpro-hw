@@ -134,7 +134,7 @@ if (!inputString) {
 
         const removeCharsFromWord = (word, charsToRemove) =>
             word.split('').filter(char => !charsToRemove.includes(char)).join('');
-        const charsToRemove = prompt("Введіть символи для видалення (через запятую або пробіл):").split(/[,\s]+/);
+        const charsToRemove = prompt("Введіть символи для видалення (через кому або пробіл):").split(/[,\s]+/);
         const result = [firstWord, secondWord].map(word =>
             removeCharsFromWord(word, charsToRemove)).join(' ');
 
