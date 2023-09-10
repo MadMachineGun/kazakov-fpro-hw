@@ -1,0 +1,80 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 15px;
+  width: 600px;
+  background-color: rgba(169, 169, 169, 0.7);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.age-input {
+  flex: 1;
+  height: 60px;
+  margin-right: 20px;
+  padding: 10px;
+  font-size: 24px;
+  text-align: right;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.numbers-wrapper, .operations-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.number-button, .operation-button, .special-button, .equal-button {
+  flex: 1;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(105, 105, 105, 0.9);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.number-button:hover, .operation-button:hover, .special-button:hover, .equal-button:hover {
+  background-color: rgba(128, 128, 128, 0.9);
+  transform: scale(1.05);
+}
+
+.number-button:active, .operation-button:active, .special-button:active, .equal-button:active {
+  transform: scale(0.95);
+}
+
+
