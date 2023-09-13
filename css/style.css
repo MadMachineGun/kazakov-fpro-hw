@@ -20,8 +20,14 @@ html {
   background-position: center;
   background-color: #e5ffff;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-size: 100% auto; }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.image-name {
+  font-size: 18px;
+  padding-top: 16px;
+  padding-left: 16px;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
 
 .next-button {
   background-color: #808080;

@@ -14,16 +14,6 @@ html {
   background-color: #b0e0e6;
 }
 
-//.image-container {
-//  width: 300px;
-//  height: 300px;
-//  background-size: cover;
-//  background-repeat: no-repeat;
-//  background-position: center;
-//  background-color: #e5ffff;
-//  margin-bottom: 20px;
-//  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-//}
 .image-container {
   width: 300px;
   height: 300px;
@@ -33,7 +23,14 @@ html {
   background-color: #e5ffff;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-size: 100% auto;
+ }
+
+.image-name {
+  font-size: 18px;
+  padding-top: 16px;
+  padding-left: 16px;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .next-button {
