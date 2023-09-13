@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +8,18 @@
 </head>
 <body>
 <div class="container">
-    <div class="loader">
-        <img src="img/loader.jpg" alt="Loader">
+    <div class="start-screen">
+        <h1>Guitar Shop</h1>
+        <button class="categories-button">Категорії</button>
     </div>
-    <div class="categories">
-        <h2>Категорії</h2>
+    <div class="categories-list">
         <ul>
-            <li class="category active" data-category="B.C. Rich">B.C. Rich</li>
-            <li class="category" data-category="Gibson">Gibson</li>
-            <li class="category" data-category="Jackson">Jackson</li>
+            <li data-category="B.C. Rich">B.C. Rich</li>
+            <li data-category="Gibson">Gibson</li>
+            <li data-category="Jackson">Jackson</li>
         </ul>
     </div>
-    <div class="products">
-        <h2>Товари</h2>
+    <div class="products-list">
         <ul class="product-list">
             <li class="product" data-product-name="B.C. Rich Bass">
                 <img src="img/B.C._Rich_Bass.png" alt="B.C. Rich Bass">
@@ -42,20 +40,27 @@
                 <button class="buy-button">Купити</button>
             </li>
         </ul>
-        <button class="next-button">Next</button>
+        Здесь будут отображаться товары
     </div>
+    <div class="cart">
+        <h2>Корзина</h2>
+        <form id="checkout-form">
+            <label for="firstName">Ім'я:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
 
-    <div class="product-info">
-        <h2>Інформація про товар</h2>
-        <div class="product-details">
-            <h3>Назва товару</h3>
-            <p>Опис товару lorem ipsum...</p>
-            <p>Ціна: $799.99</p>
-            <button class="buy-button">Купити</button>
+            <label for="lastName">Прізвище:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <button type="submit">Підтвердити покупку</button>
+        </form>
+        <div class="purchase-success-message">
+            <p>Спасибі за покупку!</p>
         </div>
     </div>
 </div>
-
-<script src="js/script.js"></script>
+<script src="js/scrypt.js"></script>
 </body>
 </html>

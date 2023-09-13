@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Reset CSS */
 html {
   box-sizing: border-box; }
 
@@ -10,138 +11,159 @@ body {
   margin: 0;
   padding: 0; }
 
-/* Стили для контейнера */
+/* Обновленные стили для контейнера */
 .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-image: url("img/loader.jpg");
+  /* Фоновое изображение */
+  background-size: cover;
   min-height: 100vh; }
 
-/* Стили для заставки */
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0; }
-
-.loader img {
-  max-width: 100%;
-  max-height: 100%; }
-
-/* Стили для категорий */
-.categories {
-  flex: 1;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-
-.categories h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333; }
-
-.categories ul {
-  list-style: none;
-  padding: 0; }
-
-.categories li {
-  margin-bottom: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  color: #666;
-  transition: color 0.3s; }
-
-.categories li:hover {
-  color: #000; }
-
-/* Стили для продуктов */
-.products {
-  flex: 2;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; }
-
-.products h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333; }
-
-.product-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; }
-
-.product {
-  flex-basis: calc(33.33% - 20px);
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s; }
-
-.product img {
-  width: 100%;
-  height: auto; }
-
-.product p {
+/* Стили для стартового экрана */
+.start-screen {
   text-align: center;
-  font-size: 18px;
-  margin: 10px 0; }
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Прозрачный фон для читаемости текста */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 
-.product:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
-
-/* Стили для информации о продукте */
-.product-info {
-  flex: 2;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-
-.product-info h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.start-screen h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
   color: #333; }
 
-.product-details {
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px; }
-
-.product-details h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #444; }
-
-.product-details p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.5; }
-
-/* Стили для кнопки "Купить" */
-.buy-button {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  font-size: 18px;
+.start-screen .categories-button {
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 24px;
   cursor: pointer;
   transition: background-color 0.3s; }
 
-.buy-button:hover {
+.start-screen .categories-button:hover {
   background-color: #0056b3; }
 
-.buy-button:focus {
-  outline: none; }
+/* Стили для списка категорий */
+.categories-list {
+  display: none;
+  /* Скроем изначально список категорий */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+
+.categories-list ul {
+  list-style: none;
+  padding: 0; }
+
+.categories-list ul li {
+  font-size: 24px;
+  margin: 10px 0;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s; }
+
+.categories-list ul li:hover {
+  color: #007bff; }
+
+/* Стили для списка товаров */
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+
+.product-item {
+  flex-basis: calc(33.33% - 20px);
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s; }
+
+.product-item img {
+  width: 100%;
+  height: auto; }
+
+.product-item p {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0; }
+
+.product-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
+
+/* Стили для кнопки "Додати в корзину" и сообщения о покупке */
+.add-to-cart {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; }
+
+.add-to-cart:hover {
+  background-color: #0056b3; }
+
+.purchase-success-message {
+  display: none;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px; }
+
+/* Стили для формы корзины */
+.cart {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+
+#checkout-form {
+  text-align: left; }
+
+#checkout-form label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333; }
+
+#checkout-form input[type="text"],
+#checkout-form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px; }
+
+#checkout-form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s; }
+
+#checkout-form button[type="submit"]:hover {
+  background-color: #0056b3; }
 
 /* Медиа-запросы для адаптивного дизайна */
 @media (max-width: 992px) {
@@ -149,16 +171,13 @@ body {
     flex-direction: column;
     align-items: center; }
 
-  .categories {
+  .categories-list, .products-list {
     width: 100%; }
 
-  .products, .product-info {
-    width: 100%; }
-
-  .product {
+  .product-item {
     flex-basis: calc(50% - 20px); } }
 @media (max-width: 768px) {
-  .product {
+  .product-item {
     flex-basis: calc(100% - 20px); } }
 
 /*# sourceMappingURL=style.css.map */
