@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guitar Shop</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
+    <div class="loader">
+        <img src="img/loader.jpg" alt="Loader">
+    </div>
     <div class="categories">
         <h2>Категорії</h2>
         <ul>
@@ -18,34 +20,34 @@
             <li class="category" data-category="Jackson">Jackson</li>
         </ul>
     </div>
-
     <div class="products">
         <h2>Товари</h2>
-        <div class="product-list">
-            <!-- Тут буде виведений список товарів -->
+        <ul class="product-list">
             <li class="product" data-product-name="B.C. Rich Bass">
                 <img src="img/B.C._Rich_Bass.png" alt="B.C. Rich Bass">
                 <p>B.C. Rich Bass</p>
                 <p>Ціна: $899.99</p>
+                <button class="buy-button">Купити</button>
             </li>
             <li class="product" data-product-name="B.C. Rich KKV">
                 <img src="img/B.C._Rich_KKV.png" alt="B.C. Rich KKV">
                 <p>B.C. Rich KKV</p>
                 <p>Ціна: $799.99</p>
+                <button class="buy-button">Купити</button>
             </li>
             <li class="product" data-product-name="B.C. Rich Warlock">
                 <img src="img/B.C._Rich_Warlock.png" alt="B.C. Rich Warlock">
                 <p>B.C. Rich Warlock</p>
                 <p>Ціна: $999.99</p>
+                <button class="buy-button">Купити</button>
             </li>
-        </div>
+        </ul>
         <button class="next-button">Next</button>
     </div>
 
     <div class="product-info">
         <h2>Інформація про товар</h2>
         <div class="product-details">
-            <!-- Тут буде виведена інформація про товар -->
             <h3>Назва товару</h3>
             <p>Опис товару lorem ipsum...</p>
             <p>Ціна: $799.99</p>

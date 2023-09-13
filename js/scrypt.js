@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const productList = document.querySelector('.product-list');
     const productInfo = document.querySelector('.product-info');
     const nextButton = document.querySelector('.next-button');
+    const loader = document.querySelector('.loader');
 
-    // Дані про товари
     const productsData = [
         {
             name: 'B.C. Rich Bass',
@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     ];
 
-    // Функція для виведення товарів певної категорії
     function displayProducts(category) {
         productList.innerHTML = '';
         const filteredProducts = productsData.filter(product => product.category === category);
@@ -80,30 +79,54 @@ document.addEventListener('DOMContentLoaded', function () {
             listItem.classList.add('product');
             listItem.dataset.productName = product.name;
             listItem.innerHTML = `
-                <img src="img/${product.image}" alt="${product.name}">
-                <p>${product.name}</p>
-                <p>Ціна: ${product.price}</p>
+                <div class="product">
+                    <img src="img/${product.image}" alt="${product.name}">
+                    <p>${product.name}</p>
+                    <p>Ціна: ${product.price}</p>
+                    <button class="buy-button">Купити</button>
+                </div>
             `;
             productList.appendChild(listItem);
         });
     }
 
-    // Вивести товари всіх категорій за замовчуванням
-    displayProducts('B.C. Rich');
+    function getNextProduct() {
+        const filteredProducts = productsData.filter(product => product.category === currentCategory);
+        currentProductIndex = (currentProductIndex + 1) % filteredProducts.length;
+        return filteredProducts[currentProductIndex];
+    }
 
-    // Обробник події для вибору категорії
+    let currentCategory = 'B.C. Rich';
+    let currentProductIndex = 0;
+
+    function showLoader() {
+        loader.style.display = 'flex';
+    }
+
+    function hideLoader() {
+        loader.style.display = 'none';
+    }
+
+    showLoader();
+
+    setTimeout(function () {
+        hideLoader();
+        displayProducts(currentCategory);
+    }, 2000);
+
     categories.forEach(category => {
         category.addEventListener('click', () => {
             const selectedCategory = category.getAttribute('data-category');
+            currentCategory = selectedCategory;
+            currentProductIndex = 0;
             displayProducts(selectedCategory);
-            productInfo.innerHTML = ''; // Очистити інформацію про товар, коли змінюється категорія
+            productInfo.innerHTML = '';
         });
     });
 
-    // Обробник події для вибору товару
     productList.addEventListener('click', event => {
-        if (event.target.classList.contains('product')) {
-            const productName = event.target.dataset.productName;
+        if (event.target.closest('.product')) {
+            const productName = event.target.closest('.product').dataset.productName;
             const selectedProduct = productsData.find(product => product.name === productName);
             productInfo.innerHTML = `
                 <h3>${selectedProduct.name}</h3>
@@ -114,16 +137,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Обробник події для кнопки "Купити"
     productInfo.addEventListener('click', event => {
         if (event.target.classList.contains('buy-button')) {
             alert('Товар куплено!');
-            productInfo.innerHTML = ''; // Очистити інформацію про товар після покупки
+            productInfo.innerHTML = '';
         }
     });
 
-    // Обробник події для кнопки "Next"
     nextButton.addEventListener('click', () => {
-        // Ваш код для переходу до наступного товару в поточній категорії
+        const nextProduct = getNextProduct();
+        if (nextProduct) {
+            const selectedProduct = productsData.find(product => product.name === nextProduct.name);
+            productInfo.innerHTML = `
+                <h3>${selectedProduct.name}</h3>
+                <p>${selectedProduct.description}</p>
+                <p>Ціна: ${selectedProduct.price}</p>
+                <button class="buy-button">Купити</button>
+            `;
+        }
     });
 });
+
