@@ -20,12 +20,11 @@ html {
   background-position: center;
   background-color: #e5ffff;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px; }
 
 .image-name {
-  font-size: 18px;
-  padding-top: 16px;
-  padding-left: 16px;
+  font-size: 16px;
   color: black;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
 
