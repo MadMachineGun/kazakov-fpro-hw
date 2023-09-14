@@ -1,49 +1,93 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
 *, *:after, *:before {
   box-sizing: inherit; }
 
-body {
-  margin: 0;
-  background-image: url("img/mainback.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
+/* Изменение цвета фона при наведении */
+body:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Пример: полупрозрачный черный фон при наведении */ }
 
+/* Стили для контейнера */
 .container {
   text-align: center;
   margin: auto;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px; }
+  background-image: url("img/mainback.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-color 0.3s; }
 
+/* Стили для кнопки Categories */
 .categories-button {
-  font-size: 18px; }
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  /* Плавное изменение цвета фона при наведении */ }
 
+.categories-button:hover {
+  background-color: #45a049; }
+
+/* Стили для категорий */
 .category-button {
   margin: 10px;
-  font-size: 16px; }
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  /* Плавное изменение цвета фона при наведении */ }
 
+.category-button:hover {
+  background-color: #1976D2; }
+
+/* Стили для товаров */
 .product-item {
   border: 1px solid #ccc;
   margin: 10px;
   padding: 10px;
   background-color: #f9f9f9;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  /* Плавное изменение цвета фона при наведении */ }
 
 .product-item:hover {
   background-color: #e5e5e5; }
 
-.product-details {
-  margin: 20px 0; }
+/* Стили для кнопки "Show Details" */
+.show-details-button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  /* Плавное изменение цвета фона при наведении */ }
 
+.show-details-button:hover {
+  background-color: #1976D2; }
+
+/* Стили для товарных изображений */
 .product-image {
   max-width: 100%;
   height: auto; }
 
+/* Стили для кнопки "Buy it" */
 .buy-button {
   background-color: #4caf50;
   color: white;
@@ -55,12 +99,22 @@ body {
   font-size: 16px;
   margin: 10px;
   cursor: pointer;
-  border-radius: 5px; }
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  /* Плавное изменение цвета фона при наведении */ }
 
 .buy-button:hover {
   background-color: #45a049; }
 
+/* Стили для сообщения об успешной покупке */
 .purchase-success-message {
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+  display: none; }
+
+/* Отображение сообщения об успешной покупке после нажатия кнопки "Buy it" */
+.purchase-success-message.active {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
