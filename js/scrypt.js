@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const categoriesButton = document.querySelector('.categories-button');
     const categoriesList = document.querySelector('.categories-list');
@@ -79,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     ];
 
-    // Функция для отображения категорий
     function displayCategories() {
         categoriesList.innerHTML = '';
         categoriesList.classList.remove('hidden');
@@ -99,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayProducts(category) {
         productsList.innerHTML = '';
-        const selectedCategory = productsData.find(cat => cat.category === category);
+        const selectedCategory
+            = productsData.find(cat => cat.category === category);
 
         if (selectedCategory) {
             selectedCategory.items.forEach(product => {
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>${product.description}</p>
                     <p>Price: ${product.price}</p>
                     <img src="${product.image}" alt="${product.name}" class="product-image">
-                    <button class="show-details-button" data-image="${product.image}">Show Details</button>
+                    <button class="buy-button">Buy It</button>
                 `;
                 productsList.appendChild(productItem);
             });
@@ -121,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
         displayCategories();
     });
 
-    // Обработчик выбора категории
     categoriesList.addEventListener('click', event => {
         if (event.target.classList.contains('category-button')) {
             const selectedCategory = event.target.getAttribute('data-category');
@@ -129,33 +127,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Обработчик клика по кнопке "Show Details"
     productsList.addEventListener('click', event => {
-        if (event.target.classList.contains('show-details-button')) {
-            const productItem = event.target.closest('.product-item');
-            const productName = productItem.querySelector('h3').textContent;
-            const productDescription = productItem.querySelector('p:nth-child(2)').textContent;
-            const productPrice = productItem.querySelector('p:nth-child(3)').textContent;
-            const productImage = event.target.getAttribute('data-image');
-
-            productDetails.querySelector('img').src = productImage;
-            productDetails.querySelector('.product-name').textContent = productName;
-            productDetails.querySelector('.product-description').textContent = productDescription;
-            productDetails.querySelector('.product-price').textContent = productPrice;
-
-            productDetails.classList.remove('hidden');
-        }
-    });
-
-    productDetails.addEventListener('click', event => {
         if (event.target.classList.contains('buy-button')) {
             purchaseSuccessMessage.innerHTML = '<p>Thank you for your purchase!</p>';
             purchaseSuccessMessage.classList.remove('hidden');
             setTimeout(() => {
                 purchaseSuccessMessage.classList.add('hidden');
-                productDetails.classList.add('hidden'); // Скрываем окно с деталями товара
-                productDetails.querySelector('img').src = ''; // Очищаем изображение
-            }, 2000);
+                displayCategories();
+            }, 1000);
         }
     });
 });

@@ -6,12 +6,10 @@ html {
   box-sizing: inherit;
 }
 
-/* Изменение цвета фона при наведении */
 body:hover {
-  background-color: rgba(0, 0, 0, 0.5); /* Пример: полупрозрачный черный фон при наведении */
+  background-color: #cccccc;
 }
 
-/* Стили для контейнера */
 .container {
   text-align: center;
   margin: auto;
@@ -25,7 +23,7 @@ body:hover {
   transition: background-color 0.3s;
 }
 
-/* Стили для кнопки Categories */
+
 .categories-button {
   font-size: 18px;
   padding: 10px 20px;
@@ -34,14 +32,14 @@ body:hover {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+  transition: background-color 0.3s;
 }
 
 .categories-button:hover {
   background-color: #45a049;
 }
 
-/* Стили для категорий */
+
 .category-button {
   margin: 10px;
   font-size: 16px;
@@ -51,14 +49,13 @@ body:hover {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+  transition: background-color 0.3s;
 }
 
 .category-button:hover {
   background-color: #1976D2;
 }
 
-/* Стили для товаров */
 .product-item {
   border: 1px solid #ccc;
   margin: 10px;
@@ -66,14 +63,13 @@ body:hover {
   background-color: #f9f9f9;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+  transition: background-color 0.3s;
 }
 
 .product-item:hover {
   background-color: #e5e5e5;
 }
 
-/* Стили для кнопки "Show Details" */
 .show-details-button {
   background-color: #2196F3;
   color: white;
@@ -81,20 +77,20 @@ body:hover {
   cursor: pointer;
   border-radius: 5px;
   padding: 5px 10px;
-  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+  transition: background-color 0.3s;
 }
 
 .show-details-button:hover {
   background-color: #1976D2;
 }
 
-/* Стили для товарных изображений */
+
 .product-image {
   max-width: 100%;
   height: auto;
 }
 
-/* Стили для кнопки "Buy it" */
+
 .buy-button {
   background-color: #4caf50;
   color: white;
@@ -107,14 +103,14 @@ body:hover {
   margin: 10px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+  transition: background-color 0.3s;
 }
 
 .buy-button:hover {
   background-color: #45a049;
 }
 
-/* Стили для сообщения об успешной покупке */
+
 .purchase-success-message {
   margin-top: 20px;
   font-size: 18px;
@@ -122,7 +118,7 @@ body:hover {
   display: none;
 }
 
-/* Отображение сообщения об успешной покупке после нажатия кнопки "Buy it" */
 .purchase-success-message.active {
   display: block;
 }
+
