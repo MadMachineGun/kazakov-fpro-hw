@@ -16,7 +16,7 @@ body:hover {
   background-image: url("img/mainback.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #dce8f5;
   transition: background-color 0.3s; }
 
 .categories-button {
@@ -47,8 +47,9 @@ body:hover {
   background-color: #1976D2; }
 
 .product-item {
+  display: inline-block;
   border: 1px solid #ccc;
-  margin: 10px;
+  margin: 10px 20px 10px 0;
   padding: 10px;
   background-color: #f9f9f9;
   cursor: pointer;

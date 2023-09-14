@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const categoriesButton = document.querySelector('.categories-button');
     const categoriesList = document.querySelector('.categories-list');
@@ -5,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productDetails = document.querySelector('.product-details');
     const purchaseSuccessMessage = document.querySelector('.purchase-success-message');
     const startScreen = document.querySelector('.start-screen');
+    const buyButton = document.querySelector('.buy-button');
 
     const productsData = [
         {
@@ -109,8 +111,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>${product.description}</p>
                     <p>Price: ${product.price}</p>
                     <img src="${product.image}" alt="${product.name}" class="product-image">
-                    <button class="buy-button">Buy It</button>
                 `;
+                const buyButtonClone = buyButton.cloneNode(true); // Клонируем кнопку
+                productItem.appendChild(buyButtonClone);
                 productsList.appendChild(productItem);
             });
         }
