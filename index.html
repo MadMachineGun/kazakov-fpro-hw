@@ -1,3 +1,42 @@
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Guitar Shop</title>-->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <div class="start-screen">-->
+<!--        <h1>Guitar Shop</h1>-->
+<!--        <button class="categories-button">Categories</button>-->
+<!--    </div>-->
+<!--    <div class="categories-list hidden">-->
+<!--        <button class="category-button" data-category="B.C. Rich">B.C. Rich</button>-->
+<!--        <button class="category-button" data-category="Gibson">Gibson</button>-->
+<!--        <button class="category-button" data-category="Jackson">Jackson</button>-->
+<!--    </div>-->
+<!--    <div class="products-list hidden">-->
+<!--        &lt;!&ndash; Product items will be added here dynamically &ndash;&gt;-->
+<!--    </div>-->
+<!--    <div class="product-details hidden">-->
+<!--        <img src="" alt="Product Image" class="product-image">-->
+<!--        <h2 class="product-name"></h2>-->
+<!--        <p class="product-description"></p>-->
+<!--        <p class="product-price"></p>-->
+<!--        <button class="buy-button">Buy it</button>-->
+<!--    </div>-->
+<!--    <div class="purchase-success-message hidden">-->
+<!--        <p>Thank you for your purchase!</p>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="js/scrypt.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,57 +49,28 @@
 <div class="container">
     <div class="start-screen">
         <h1>Guitar Shop</h1>
-        <button class="categories-button">Категорії</button>
+        <button class="categories-button">Categories</button>
     </div>
-    <div class="categories-list">
-        <ul>
-            <li data-category="B.C. Rich">B.C. Rich</li>
-            <li data-category="Gibson">Gibson</li>
-            <li data-category="Jackson">Jackson</li>
-        </ul>
+    <div class="categories-list hidden">
+        <button class="category-button" data-category="B.C. Rich">B.C. Rich</button>
+        <button class="category-button" data-category="Gibson">Gibson</button>
+        <button class="category-button" data-category="Jackson">Jackson</button>
     </div>
-    <div class="products-list">
-        <ul class="product-list">
-            <li class="product" data-product-name="B.C. Rich Bass">
-                <img src="img/B.C._Rich_Bass.png" alt="B.C. Rich Bass">
-                <p>B.C. Rich Bass</p>
-                <p>Ціна: $899.99</p>
-                <button class="buy-button">Купити</button>
-            </li>
-            <li class="product" data-product-name="B.C. Rich KKV">
-                <img src="img/B.C._Rich_KKV.png" alt="B.C. Rich KKV">
-                <p>B.C. Rich KKV</p>
-                <p>Ціна: $799.99</p>
-                <button class="buy-button">Купити</button>
-            </li>
-            <li class="product" data-product-name="B.C. Rich Warlock">
-                <img src="img/B.C._Rich_Warlock.png" alt="B.C. Rich Warlock">
-                <p>B.C. Rich Warlock</p>
-                <p>Ціна: $999.99</p>
-                <button class="buy-button">Купити</button>
-            </li>
-        </ul>
-        Здесь будут отображаться товары
+    <div class="products-list hidden">
+        <!-- Product items will be added here dynamically -->
     </div>
-    <div class="cart">
-        <h2>Корзина</h2>
-        <form id="checkout-form">
-            <label for="firstName">Ім'я:</label>
-            <input type="text" id="firstName" name="firstName" required><br>
-
-            <label for="lastName">Прізвище:</label>
-            <input type="text" id="lastName" name="lastName" required><br>
-
-            <label for="phone">Телефон:</label>
-            <input type="tel" id="phone" name="phone" required><br>
-
-            <button type="submit">Підтвердити покупку</button>
-        </form>
-        <div class="purchase-success-message">
-            <p>Спасибі за покупку!</p>
-        </div>
+    <div class="product-details hidden">
+        <img src="" alt="Product Image" class="product-image">
+        <h2 class="product-name"></h2>
+        <p class="product-description"></p>
+        <p class="product-price"></p>
+        <button class="buy-button">Buy it</button>
+    </div>
+    <div class="purchase-success-message hidden">
+        <p>Thank you for your purchase!</p>
     </div>
 </div>
+
 <script src="js/scrypt.js"></script>
 </body>
 </html>
