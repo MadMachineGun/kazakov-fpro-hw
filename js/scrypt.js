@@ -1,4 +1,3 @@
-
 const imageCount = 41;
 const imagePrefix = "img/";
 const images = [];
@@ -13,20 +12,29 @@ const nextButton = document.getElementById("next");
 const sliderImage = document.getElementById("slider-image");
 const audioElement = document.getElementById("myAudio");
 
-audioElement.src = "audio/back_in_black.mp3";
+let currentTrack = "back_in_black.mp3";
 
-let isFirstChange = false;
+updateButtonsVisibility();
 
-function updateButtonsVisibility() {
-    prevButton.style.display = currentIndex === 0 && !isFirstChange ? "none" : "block";
-    nextButton.style.display = currentIndex === images.length - 1 ? "none" : "block";
-}
+audioElement.addEventListener("ended", () => {
+    if (currentTrack === "back_in_black.mp3" && currentIndex < images.length - 1) {
+        currentIndex++;
+        updateImage();
+    }
+});
 
 nextButton.addEventListener("click", () => {
     if (currentIndex < images.length - 1) {
         currentIndex++;
         updateImage();
+
+        if (currentTrack !== "back_in_black.mp3") {
+            currentTrack = "back_in_black.mp3";
+            audioElement.src = "audio/back_in_black.mp3";
+        }
+
         audioElement.play();
+        updateButtonsVisibility();
     }
 });
 
@@ -34,17 +42,31 @@ prevButton.addEventListener("click", () => {
     if (currentIndex > 0) {
         currentIndex--;
         updateImage();
-        audioElement.pause();
+
+        if (currentTrack !== "enter-sandman.mp3") {
+            currentTrack = "enter-sandman.mp3";
+            audioElement.src = "audio/enter-sandman.mp3";
+        }
+
+        audioElement.play();
+        updateButtonsVisibility();
     }
 });
 
 function updateImage() {
     sliderImage.src = images[currentIndex];
-    if (!isFirstChange) {
-        isFirstChange = true;
+}
+
+function updateButtonsVisibility() {
+    if (currentIndex === 0) {
+        prevButton.style.display = "none";
+    } else {
         prevButton.style.display = "block";
     }
-    updateButtonsVisibility();
-}
-updateButtonsVisibility();
 
+    if (currentIndex === images.length - 1) {
+        nextButton.style.display = "none";
+    } else {
+        nextButton.style.display = "block";
+    }
+}
