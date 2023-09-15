@@ -1,4 +1,4 @@
-const imageCount = 96;
+const imageCount = 80;
 const imagePrefix = "img/";
 const images = [];
 
