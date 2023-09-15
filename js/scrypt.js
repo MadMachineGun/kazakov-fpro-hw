@@ -15,6 +15,13 @@ const audioElement = document.getElementById("myAudio");
 
 audioElement.src = "audio/back_in_black.mp3";
 
+let isFirstChange = false;
+
+function updateButtonsVisibility() {
+    prevButton.style.display = currentIndex === 0 && !isFirstChange ? "none" : "block";
+    nextButton.style.display = currentIndex === images.length - 1 ? "none" : "block";
+}
+
 nextButton.addEventListener("click", () => {
     if (currentIndex < images.length - 1) {
         currentIndex++;
@@ -33,8 +40,11 @@ prevButton.addEventListener("click", () => {
 
 function updateImage() {
     sliderImage.src = images[currentIndex];
-    prevButton.style.display = currentIndex === 0 ? "none" : "block";
-    nextButton.style.display = currentIndex === images.length - 1 ? "none" : "block";
+    if (!isFirstChange) {
+        isFirstChange = true;
+        prevButton.style.display = "block";
+    }
+    updateButtonsVisibility();
 }
-
+updateButtonsVisibility();
 
