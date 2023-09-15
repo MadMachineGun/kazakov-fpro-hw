@@ -1,3 +1,63 @@
+* {
+  margin: 0;
+  padding: 0; }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("img/metal-forever.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: slategrey;
+  position: relative;
+  overflow: hidden; }
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  position: relative; }
+
+.arrow-button {
+  font-size: 100px;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease; }
+
+.arrow-button:hover {
+  color: #555; }
+
+#slider-image-container {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden; }
+
+#slider-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; }
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 70px;
+  color: #bababa;
+  text-shadow: 5px 0 10px rgba(255, 165, 0, 0.8);
+  position: absolute;
+  top: 0;
+  background: linear-gradient(to top, transparent, rgba(50, 48, 45, 0.8));
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box; }
 
 /*# sourceMappingURL=style.css.map */
