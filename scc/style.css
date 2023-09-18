@@ -100,26 +100,27 @@ body:hover {
 .purchase-success-message.active {
   display: block; }
 
-.registration-form {
+.registration-form,
+.registration-data {
   text-align: left; }
 
-.registration-form label {
+.registration-form label,
+.registration-data th {
   display: block;
   margin-bottom: 5px;
   font-weight: bold; }
 
 .registration-form input[type="text"],
 .registration-form select,
-.registration-form textarea {
+.registration-form input[type="email"],
+.registration-form textarea,
+.registration-form input[type="radio"],
+.registration-form input[type="checkbox"] {
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px; }
-
-.registration-form input[type="radio"],
-.registration-form input[type="checkbox"] {
-  margin-right: 5px; }
 
 .registration-form button {
   background-color: #4caf50;
@@ -137,5 +138,18 @@ body:hover {
 
 .registration-form button:hover {
   background-color: #45a049; }
+
+.registration-data {
+  margin-top: 20px; }
+
+.registration-data table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.registration-data th,
+.registration-data td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: left; }
 
 /*# sourceMappingURL=style.css.map */

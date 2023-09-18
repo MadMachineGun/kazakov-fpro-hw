@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const categoriesButton = document.querySelector('.categories-button');
     const categoriesList = document.querySelector('.categories-list');
@@ -5,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productDetails = document.querySelector('.product-details');
     const startScreen = document.querySelector('.start-screen');
     const registrationForm = document.querySelector('.registration-form');
+    const registrationDataBlock = document.querySelector('.registration-data');
 
     const productsData = [
         {
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     ];
 
+
     function displayCategories() {
         categoriesList.innerHTML = '';
         categoriesList.classList.remove('hidden');
@@ -139,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    const registrationButton = document.querySelector('.registration-button');
+    const registrationButton = document.querySelector('#registration-button');
     registrationButton.addEventListener('click', () => {
         displayRegistrationForm();
     });
@@ -154,10 +157,24 @@ document.addEventListener('DOMContentLoaded', function () {
             registrationData[key] = value;
         });
 
-        console.log('Registration Data:', registrationData);
-
+        displayRegistrationData(registrationData);
         registrationForm.classList.add('hidden');
         categoriesList.classList.remove('hidden');
         startScreen.classList.remove('hidden');
     });
+
+    function displayRegistrationData(data) {
+        const table = registrationDataBlock.querySelector('table');
+        table.innerHTML = '<tr><th>Field</th><th>Value</th></tr>';
+
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${key}</td><td>${data[key]}</td>`;
+                table.appendChild(row);
+            }
+        }
+
+        registrationDataBlock.classList.remove('hidden');
+    }
 });

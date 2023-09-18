@@ -26,7 +26,7 @@
     <div class="purchase-success-message hidden">
         <p>Thank you for your purchase!</p>
     </div>
-    <!-- Додана форма реєстрації -->
+
     <div class="registration-form hidden">
         <h2>Registration</h2>
         <form id="registration-form">
@@ -36,8 +36,11 @@
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required><br><br>
 
-            <label for="birthdate">Date of Birth:</label>
-            <input type="text" id="birthdate" name="birthdate" required><br><br>
+            <label for="birthdate">Date of Birth (YYYY-MM-DD):</label>
+            <input type="text" id="birthdate" name="birthdate" pattern="\d{4}-\d{2}-\d{2}" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
 
             <label>Gender:</label>
             <input type="radio" id="male" name="gender" value="Male">
@@ -47,6 +50,8 @@
 
             <label for="city">City:</label>
             <select id="city" name="city" required>
+                <option value="Kyiv">Kyiv</option>
+                <option value="Odessa">Odessa</option>
                 <option value="New York">New York</option>
                 <option value="Los Angeles">Los Angeles</option>
                 <option value="Chicago">Chicago</option>
@@ -57,6 +62,8 @@
             <textarea id="address" name="address" rows="4" required></textarea><br><br>
 
             <label>Languages:</label><br>
+            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">
+            <label for="ukrainian">Ukrainian</label>
             <input type="checkbox" id="english" name="languages" value="English">
             <label for="english">English</label>
             <input type="checkbox" id="spanish" name="languages" value="Spanish">
@@ -66,6 +73,15 @@
 
             <button type="submit" id="registration-button">Save</button>
         </form>
+    </div>
+    <div class="registration-data hidden">
+        <h2>Registration Data</h2>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </table>
     </div>
 </div>
 
