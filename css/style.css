@@ -1,15 +1,12 @@
-html {
-  box-sizing: border-box;
-}
-
+@charset "UTF-8";
+/* Стили для HTML и глобальные стили */
 *, *:after, *:before {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 body:hover {
-  background-color: #cccccc;
-}
+  background-color: #cccccc; }
 
+/* Стили для .container */
 .container {
   text-align: center;
   margin: auto;
@@ -19,10 +16,9 @@ body:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #dce8f5;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
-
+/* Стили для кнопок */
 .categories-button {
   font-size: 18px;
   padding: 10px 20px;
@@ -31,13 +27,10 @@ body:hover {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
 .categories-button:hover {
-  background-color: #45a049;
-}
-
+  background-color: #45a049; }
 
 .category-button {
   margin: 10px;
@@ -48,13 +41,12 @@ body:hover {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
 .category-button:hover {
-  background-color: #1976D2;
-}
+  background-color: #1976D2; }
 
+/* Стили для товаров и кнопок "Show Details" */
 .product-item {
   display: inline-block;
   border: 1px solid #ccc;
@@ -63,12 +55,10 @@ body:hover {
   background-color: #f9f9f9;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
 .product-item:hover {
-  background-color: #e5e5e5;
-}
+  background-color: #e5e5e5; }
 
 .show-details-button {
   background-color: #2196F3;
@@ -77,20 +67,17 @@ body:hover {
   cursor: pointer;
   border-radius: 5px;
   padding: 5px 10px;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
 .show-details-button:hover {
-  background-color: #1976D2;
-}
+  background-color: #1976D2; }
 
-
+/* Стили для изображений товаров */
 .product-image {
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
-
+/* Стили для кнопки "Buy" */
 .buy-button {
   background-color: #4caf50;
   color: white;
@@ -103,36 +90,31 @@ body:hover {
   margin: 10px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
 .buy-button:hover {
-  background-color: #45a049;
-}
+  background-color: #45a049; }
 
-
+/* Стили для сообщения об успешной покупке */
 .purchase-success-message {
   margin-top: 20px;
   font-size: 18px;
   color: green;
-  display: none;
-}
+  display: none; }
 
 .purchase-success-message.active {
-  display: block;
-}
+  display: block; }
 
+/* Стили для формы регистрации и данных о регистрации */
 .registration-form,
 .registration-data {
-  text-align: left;
-}
+  text-align: left; }
 
 .registration-form label,
 .registration-data th {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .registration-form input[type="text"],
 .registration-form select,
@@ -144,8 +126,7 @@ body:hover {
   padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
 .registration-form button {
   background-color: #4caf50;
@@ -159,25 +140,22 @@ body:hover {
   margin: 10px 0;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
-}
+  transition: background-color 0.3s; }
 
 .registration-form button:hover {
-  background-color: #45a049;
-}
+  background-color: #45a049; }
 
 .registration-data {
-  margin-top: 20px;
-}
+  margin-top: 20px; }
 
 .registration-data table {
   width: 100%;
-  border-collapse: collapse;
-}
+  border-collapse: collapse; }
 
 .registration-data th,
 .registration-data td {
   border: 1px solid #ccc;
   padding: 5px;
-  text-align: left;
-}
+  text-align: left; }
+
+/*# sourceMappingURL=style.css.map */
