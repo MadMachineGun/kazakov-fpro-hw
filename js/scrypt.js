@@ -6,6 +6,7 @@
         const productDetails = document.querySelector('.product-details');
         const startScreen = document.querySelector('.start-screen');
 
+
         const productsData = [
             {
                 category: 'B.C. Rich',
