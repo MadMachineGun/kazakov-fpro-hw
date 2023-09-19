@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             items: [
                 {
                     name: 'B.C. Rich Bass',
-                    description: 'Electric Bass guitar - B.C. "Rich Bass"',
+                    description: 'Electric Bass guitar - B.C. Rich "Bass"',
                     price: '$899.99',
                     image: 'img/B.C._Rich_Bass.png',
                 },
