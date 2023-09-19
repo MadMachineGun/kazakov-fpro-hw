@@ -39,10 +39,9 @@
 #user-table input[type="text"],
 #user-table input[type="email"],
 #user-table select {
-  width: 70%;
+  width: 90%;
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s;
 }
