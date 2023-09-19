@@ -1,88 +1,61 @@
-html {
-  box-sizing: border-box;
+body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
 }
 
-*, *:after, *:before {
-  box-sizing: inherit;
+.reg-form, #user-table {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #e0f0ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-/* Стилі для форми реєстрації */
-form {
+
+.reg-form h1, #user-table h2 {
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-label {
+.reg-form label, #user-table label {
   display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 5px;
   margin-bottom: 10px;
-}
-
-select {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-/* Стилі для таблиці */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table, th, td {
-  border: 1px solid #ccc;
-  text-align: left;
-  padding: 8px;
-}
-
-/* Сховати секцію з таблицею за замовчуванням */
-.hidden {
-  display: none;
-}
-
-
-.purchase-success-message {
-  margin-top: 20px;
-  font-size: 18px;
-  color: green;
-  display: none;
-}
-
-.purchase-success-message.active {
-  display: block;
-}
-
-.registration-form,
-.registration-data {
-  text-align: left;
-}
-
-.registration-form label,
-.registration-data th {
-  display: block;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
-.registration-form input[type="text"],
-.registration-form select,
-.registration-form input[type="email"],
-.registration-form textarea,
-.registration-form input[type="radio"],
-.registration-form input[type="checkbox"] {
+.reg-form input[type="text"],
+.reg-form input[type="email"],
+.reg-form select,
+#user-table input[type="text"],
+#user-table input[type="email"],
+#user-table select {
   width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  transition: border-color 0.3s;
 }
 
-.registration-form button {
+.reg-form input[type="text"]:hover,
+.reg-form input[type="email"]:hover,
+.reg-form select:hover,
+#user-table input[type="text"]:hover,
+#user-table input[type="email"]:hover,
+#user-table select:hover {
+  border-color: #4caf50;
+}
+
+.reg-form input[type="radio"],
+.reg-form input[type="checkbox"],
+#user-table input[type="radio"],
+#user-table input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.reg-form button, #user-table button {
   background-color: #4caf50;
   color: white;
   border: none;
@@ -97,22 +70,33 @@ table, th, td {
   transition: background-color 0.3s;
 }
 
-.registration-form button:hover {
+.reg-form button:hover, #user-table button:hover {
   background-color: #45a049;
 }
 
-.registration-data {
+.hidden {
+  display: none;
+}
+
+#user-table table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-.registration-data table {
-  width: 100%;
-  border-collapse: collapse;
+#user-table th, #user-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
 
-.registration-data th,
-.registration-data td {
+#user-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#user-table th, #user-table td {
   border: 1px solid #ccc;
-  padding: 5px;
+  padding: 10px;
   text-align: left;
 }
