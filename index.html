@@ -3,87 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitar Shop</title>
+    <title>Форма реєстрації</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-    <div class="start-screen">
-        <h1>Guitar Shop</h1>
-        <button class="categories-button">Categories</button>
-    </div>
-    <div class="categories-list hidden">
-    </div>
-    <div class="products-list hidden">
-    </div>
-    <div class="product-details hidden">
-        <img src="" alt="" class="product-image">
-        <h2 class="product-name"></h2>
-        <p class="product-description"></p>
-        <p class="product-price"></p>
-        <button class="buy-button">Buy It!</button>
-    </div>
-    <div class="purchase-success-message hidden">
-        <p>Thank you for your purchase!</p>
-    </div>
+<div class="registration-form">
+<h1>Registration form</h1>
+<form id="registration-form">
+    <label for="first-name">Ім'я:</label>
+    <input type="text" id="first-name" name="first-name" required><br>
 
-    <div class="registration-form hidden">
-        <h2>Registration</h2>
-        <form id="registration-form">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required><br><br>
+    <label for="last-name">Прізвище:</label>
+    <input type="text" id="last-name" name="last-name" required><br>
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required><br><br>
+    <label for="birthdate">Дата народження:</label>
+    <input type="text" id="birthdate" name="birthdate" required><br>
 
-            <label for="birthdate">Date of Birth (YYYY-MM-DD):</label>
-            <input type="text" id="birthdate" name="birthdate" pattern="\d{4}-\d{2}-\d{2}" required><br><br>
+    <label>Стать:</label>
+    <input type="radio" id="male" name="gender" value="male">Чоловік
+    <input type="radio" id="female" name="gender" value="female">Жінка<br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
+    <label for="city">Місто:</label>
+    <select id="city" name="city">
+        <option value="kyiv">Київ</option>
+        <option value="lviv">Львів</option>
+        <option value="odessa">Одеса</option>
+        <option value="kyiv">Kyiv</option>
+        <option value="odessa">Odessa</option>
+    </select><br>
 
-            <label>Gender:</label>
-            <input type="radio" id="male" name="gender" value="Male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="Female">
-            <label for="female">Female</label><br><br>
+    <label for="address">Адреса:</label>
+    <textarea id="address" name="address"></textarea><br>
 
-            <label for="city">City:</label>
-            <select id="city" name="city" required>
-                <option value="Kyiv">Kyiv</option>
-                <option value="Odessa">Odessa</option>
-                <option value="New York">New York</option>
-                <option value="Los Angeles">Los Angeles</option>
-                <option value="Chicago">Chicago</option>
-                <option value="Houston">Houston</option>
-            </select><br><br>
+    <label>Мови, якими володієте:</label>
+    <input type="checkbox" id="english" name="languages" value="english">Англійська
+    <input type="checkbox" id="spanish" name="languages" value="spanish">Іспанська
+    <input type="checkbox" id="french" name="languages" value="french">Французька
+    <input type="checkbox" id="ukrainian" name="languages" value="ukrainian">Українська<br>
 
-            <label for="address">Address:</label><br>
-            <textarea id="address" name="address" rows="4" required></textarea><br><br>
-
-            <label>Languages:</label><br>
-            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">
-            <label for="ukrainian">Ukrainian</label>
-            <input type="checkbox" id="english" name="languages" value="English">
-            <label for="english">English</label>
-            <input type="checkbox" id="spanish" name="languages" value="Spanish">
-            <label for="spanish">Spanish</label>
-            <input type="checkbox" id="french" name="languages" value="French">
-            <label for="french">French</label><br><br>
-
-            <button type="submit" id="registration-button">Save</button>
-        </form>
-    </div>
-    <div class="registration-data hidden">
-        <h2>Registration Data</h2>
-        <table>
-            <tr>
-                <th>Field</th>
-                <th>Value</th>
-            </tr>
-        </table>
-    </div>
+    <button type="button" id="save-button">Зберегти</button>
+</form>
 </div>
+
+<section id="user-table" class="hidden">
+    <h2>Дані користувача:</h2>
+    <table>
+        <!-- Тут буде відображатися таблиця з даними користувача -->
+    </table>
+    <button type="button" id="subscribe-button">Subscribe</button>
+</section>
 
 <script src="js/script.js"></script>
 </body>

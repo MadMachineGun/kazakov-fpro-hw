@@ -1,101 +1,43 @@
 @charset "UTF-8";
-/* Стили для HTML и глобальные стили */
+html {
+  box-sizing: border-box; }
+
 *, *:after, *:before {
   box-sizing: inherit; }
 
-body:hover {
-  background-color: #cccccc; }
+/* Стилі для форми реєстрації */
+form {
+  margin-bottom: 20px; }
 
-/* Стили для .container */
-.container {
-  text-align: center;
-  margin: auto;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #dce8f5;
-  transition: background-color 0.3s; }
+label {
+  display: block;
+  margin-bottom: 5px; }
 
-/* Стили для кнопок */
-.categories-button {
-  font-size: 18px;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s; }
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px; }
 
-.categories-button:hover {
-  background-color: #45a049; }
+select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px; }
 
-.category-button {
-  margin: 10px;
-  font-size: 16px;
-  padding: 10px 20px;
-  background-color: #2196F3;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s; }
+/* Стилі для таблиці */
+table {
+  border-collapse: collapse;
+  width: 100%; }
 
-.category-button:hover {
-  background-color: #1976D2; }
-
-/* Стили для товаров и кнопок "Show Details" */
-.product-item {
-  display: inline-block;
+table, th, td {
   border: 1px solid #ccc;
-  margin: 10px 20px 10px 0;
-  padding: 10px;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s; }
+  text-align: left;
+  padding: 8px; }
 
-.product-item:hover {
-  background-color: #e5e5e5; }
+/* Сховати секцію з таблицею за замовчуванням */
+.hidden {
+  display: none; }
 
-.show-details-button {
-  background-color: #2196F3;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 5px 10px;
-  transition: background-color 0.3s; }
-
-.show-details-button:hover {
-  background-color: #1976D2; }
-
-/* Стили для изображений товаров */
-.product-image {
-  max-width: 100%;
-  height: auto; }
-
-/* Стили для кнопки "Buy" */
-.buy-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s; }
-
-.buy-button:hover {
-  background-color: #45a049; }
-
-/* Стили для сообщения об успешной покупке */
 .purchase-success-message {
   margin-top: 20px;
   font-size: 18px;
@@ -105,7 +47,6 @@ body:hover {
 .purchase-success-message.active {
   display: block; }
 
-/* Стили для формы регистрации и данных о регистрации */
 .registration-form,
 .registration-data {
   text-align: left; }
