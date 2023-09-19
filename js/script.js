@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 productsList.innerHTML = '';
                 productDetails.innerHTML = '';
                 startScreen.classList.add('hidden');
-            }, 1500);
+            }, 1000);
         }
     });
 
