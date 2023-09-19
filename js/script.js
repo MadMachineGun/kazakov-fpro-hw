@@ -1,4 +1,4 @@
-
+`use strict`
 document.addEventListener('DOMContentLoaded', function () {
     const categoriesButton = document.querySelector('.categories-button');
     const categoriesList = document.querySelector('.categories-list');
