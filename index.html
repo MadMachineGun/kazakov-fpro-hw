@@ -44,13 +44,14 @@
             </select><br>
 
             <label>Languages:</label><br>
-            <label for="english"></label><input type="checkbox" id="english" name="languages"
-                                                value="English">English<br>
-            <label for="spanish"></label><input type="checkbox" id="spanish" name="languages"
-                                                value="Spanish">Spanish<br>
-            <label for="french"></label><input type="checkbox" id="french" name="languages" value="French">French<br>
-            <label for="ukrainian"></label><input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>
-
+            <label for="english"></label>
+            <input type="checkbox" id="english" name="languages" value="English">English<br>
+            <label for="spanish"></label>
+            <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>
+            <label for="french"></label>
+            <input type="checkbox" id="french" name="languages" value="French">French<br>
+            <label for="ukrainian"></label>
+            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>
             <button type="button" id="save-button">Save</button>
         </form>
     </section>
@@ -58,33 +59,32 @@
     <section id="user-table" class="hidden">
         <h2>Registration Data:</h2>
         <table>
-
         </table>
         <button type="button" id="subscribe-button">Subscribe</button>
     </section>
 
-<section class="shop">
-    <div class="container">
-        <div class="start-screen">
-            <h1>Guitar Shop</h1>
-            <button class="categories-button">Categories</button>
+    <section class="shop">
+        <div class="container">
+            <div class="start-screen">
+                <h1>Guitar Shop</h1>
+                <button class="categories-button">Categories</button>
+            </div>
+            <div class="categories-list hidden">
+            </div>
+            <div class="products-list hidden">
+            </div>
+            <div class="product-details hidden">
+                <img src="" alt="" class="product-image">
+                <h2 class="product-name"></h2>
+                <p class="product-description"></p>
+                <p class="product-price"></p>
+                <button class="buy-button">Buy It!</button>
+            </div>
+            <div class="purchase-success-message hidden">
+                <p>Thank you for your purchase!</p>
+            </div>
         </div>
-        <div class="categories-list hidden">
-        </div>
-        <div class="products-list hidden">
-        </div>
-        <div class="product-details hidden">
-            <img src="" alt="" class="product-image">
-            <h2 class="product-name"></h2>
-            <p class="product-description"></p>
-            <p class="product-price"></p>
-            <button class="buy-button">Buy It!</button>
-        </div>
-        <div class="purchase-success-message hidden">
-            <p>Thank you for your purchase!</p>
-        </div>
-    </div>
-</section>
+    </section>
 </div>
 
 <script src="js/script.js"></script>
