@@ -58,7 +58,7 @@
 //     document.getElementById('registration-form').style.display = 'block';
 //     document.getElementById('registration-form').reset();
 // });
-//
+
 //
 // document.addEventListener('DOMContentLoaded', function () {
 //     const categoriesButton = document.querySelector('.categories-button');
@@ -203,17 +203,6 @@
 // });
 
 
-function displayUserData(userData) {
-    const table = document.querySelector('table');
-    for (const key in userData) {
-        const newRow = table.insertRow();
-        const cell1 = newRow.insertCell();
-        cell1.textContent = key;
-        const cell2 = newRow.insertCell();
-        cell2.textContent = userData[key];
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     const categoriesButton = document.querySelector('.categories-button');
     const categoriesList = document.querySelector('.categories-list');
@@ -227,19 +216,19 @@ document.addEventListener('DOMContentLoaded', function () {
             items: [
                 {
                     name: 'B.C. Rich Bass',
-                    description: 'Описание товара B.C. Rich Bass',
+                    description: 'Electric Bass guitar B.C. Rich Bass',
                     price: '$899.99',
                     image: 'img/B.C._Rich_Bass.png',
                 },
                 {
                     name: 'B.C. Rich KKV',
-                    description: 'Описание товара B.C. Rich KKV',
+                    description: 'Electric guitar B.C. Rich KKV',
                     price: '$799.99',
                     image: 'img/B.C._Rich_KKV.png',
                 },
                 {
                     name: 'B.C. Rich Warlock',
-                    description: 'Описание товара B.C. Rich Warlock',
+                    description: 'Electric guitar B.C. Rich Warlock',
                     price: '$999.99',
                     image: 'img/B.C._Rich_Warlock.png',
                 },
@@ -250,19 +239,19 @@ document.addEventListener('DOMContentLoaded', function () {
             items: [
                 {
                     name: 'Gibson Explorer',
-                    description: 'Описание товара Gibson Explorer',
+                    description: 'Electric guitar Gibson Explorer',
                     price: '$1249.99',
                     image: 'img/Gibson_Explorer.png',
                 },
                 {
                     name: 'Gibson Flying V',
-                    description: 'Описание товара Gibson Flying V',
+                    description: 'Electric guitar Gibson Flying V',
                     price: '$1149.99',
                     image: 'img/Gibson_Flying_V.png',
                 },
                 {
                     name: 'Gibson SG Special',
-                    description: 'Описание товара Gibson SG Special',
+                    description: 'Electric guitar Gibson SG Special',
                     price: '$1099.99',
                     image: 'img/Gibson_SG_Special.png',
                 },
@@ -273,26 +262,25 @@ document.addEventListener('DOMContentLoaded', function () {
             items: [
                 {
                     name: 'Jackson DK2M',
-                    description: 'Описание товара Jackson DK2M',
+                    description: 'Electric guitar Jackson DK2M',
                     price: '$799.99',
                     image: 'img/Jackson_DK2M.png',
                 },
                 {
                     name: 'Jackson Kelly',
-                    description: 'Описание товара Jackson Kelly',
+                    description: 'Electric guitar Jackson Kelly',
                     price: '$849.99',
                     image: 'img/Jackson_Kelly.png',
                 },
                 {
                     name: 'Jackson Rhoads',
-                    description: 'Описание товара Jackson Rhoads',
+                    description: 'ОElectric guitar Jackson Rhoads',
                     price: '$899.99',
                     image: 'img/Jackson_Rhoads.png',
                 },
             ],
         },
     ];
-
 
     function displayCategories() {
         categoriesList.innerHTML = '';
@@ -355,7 +343,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById('save-button').addEventListener('click', function () {
+    function displayUserData(userData) {
+        const table = document.querySelector('table');
+
+        for (const key in userData) {
+            const newRow = table.insertRow();
+            const cell1 = newRow.insertCell();
+            cell1.textContent = key;
+            const cell2 = newRow.insertCell();
+            cell2.textContent = userData[key];
+        }
+    }
+
+    document.getElementById('save-button').addEventListener('click', function() {
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
         const email = document.getElementById('email').value;
@@ -363,7 +363,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const gender = document.querySelector('input[name="gender"]:checked').value;
         const city = document.getElementById('city').value;
 
-        const languages = Array.from(document.querySelectorAll('input[name="languages"]:checked')).map(checkbox => checkbox.value);
+        const languages = [];
+        const languageCheckboxes = document.querySelectorAll('input[name="languages"]:checked');
+        languageCheckboxes.forEach(checkbox => {
+            languages.push(checkbox.value);
+        });
 
         const dateRegex = /^\d{2}\.\d{2}\.\d{4}$/;
         if (!dateRegex.test(birthdate)) {
@@ -393,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('user-table').style.display = 'block';
     });
 
-    document.getElementById('subscribe-button').addEventListener('click', function () {
+    document.getElementById('subscribe-button').addEventListener('click', function() {
         document.getElementById('user-table').style.display = 'none';
         document.getElementById('registration-form').style.display = 'block';
         document.getElementById('registration-form').reset();
