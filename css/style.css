@@ -1,3 +1,27 @@
+* {
+  margin: 0;
+  padding: 0; }
 
+.main-container {
+  height: 50px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #E6E6FAFF; }
+
+.smile-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+
+.vote-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+
+.vote-score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0000; }
 
 /*# sourceMappingURL=style.css.map */
