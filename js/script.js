@@ -37,7 +37,6 @@ function updateVotes() {
         voteContainer.appendChild(voteElement);
     });
 }
-
 // Show smileys elements
 function showSmiles() {
     smileContainer.innerHTML = "";
