@@ -220,7 +220,7 @@ function showSmiles() {
         let smileElement = document.createElement('div');
         smileElement.classList.add('smiley');
         smileElement.textContent = `${index + 1}: ${item.smile}`;
-        smileElement.dataset.index = index;
+        smileElement.dataset.index = index.toString();
 
         smileElement.addEventListener('click', () => {
             const selectedIndex = smileElement.dataset.index;
