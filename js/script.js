@@ -1,6 +1,6 @@
 "use strict";
 
-// Create an array of 50 smileys
+// Создаем массив из 50 смайлов, с возможностью добавления.
 const allSmileys = [
     "😆", "😅", "😃", "😈", "😉", "😂", "😎", "🤣", "😊", "😇",
     "😍", "😋", "😜", "🤩", "🥰", "😚", "😘", "🤗", "🤫", "🤔",
@@ -9,13 +9,13 @@ const allSmileys = [
     "😒", "😓", "😔", "😕", "🙁", "😖", "😞", "😟", "😤", "😢"
 ];
 
-// Create an array to store currently displayed smileys
+// Создаем массив для хранения отображаемых в данный момент смайлов.
 let displayedSmileys = [];
 
-// Create smileys data as an array of objects
+// Создание данных смайлов в виде массива объектов.
 let smileys = [];
 
-// Get smile && vote containers
+// Создаем контейнеры для смайлов и голосований
 let smileContainer = document.querySelector('#smile-container');
 let voteContainer = document.querySelector('#vote-container');
 let removeSmileyButton = document.querySelector('#remove-smiley-button');
@@ -25,7 +25,7 @@ let addModalButton = document.querySelector('#add-modal-button');
 let closeModalButton = document.querySelector('#close-modal-button');
 let modalContent = document.querySelector('.modal-content');
 
-// Update vote scores
+// Обновляем результаты голосований
 function updateVotes() {
     voteContainer.innerHTML = "";
 
@@ -37,7 +37,8 @@ function updateVotes() {
         voteContainer.appendChild(voteElement);
     });
 }
-// Show smileys elements
+
+// Отображаем смыйлы
 function showSmiles() {
     smileContainer.innerHTML = "";
 
@@ -57,7 +58,7 @@ function showSmiles() {
     });
 }
 
-// Add a new smiley
+// Добавление нового смайла
 addSmileyButton.addEventListener('click', () => {
     if (displayedSmileys.length < 50) {
         modal.style.display = 'block';
@@ -66,7 +67,7 @@ addSmileyButton.addEventListener('click', () => {
     }
 });
 
-// Remove a smiley by index
+// Удаление смайла по его индексу
 removeSmileyButton.addEventListener('click', () => {
     const indexToRemove = parseInt(prompt('Введіть номер смайлика для видалення')) - 1;
     if (!isNaN(indexToRemove) && indexToRemove >= 0 && indexToRemove < displayedSmileys.length) {
@@ -78,7 +79,7 @@ removeSmileyButton.addEventListener('click', () => {
     }
 });
 
-// Populate modal with smileys
+// Модальное окно со смайлами
 function populateModal() {
     modalContent.innerHTML = "";
 
@@ -120,18 +121,35 @@ function populateModal() {
     });
 }
 
-// Show the modal with smileys
+// Показать модальное окно со смайлами
 addModalButton.addEventListener('click', () => {
     populateModal();
     modal.style.display = 'block';
 });
 
-// Close the modal
+// Закрыть модальное окно со смайлами
 closeModalButton.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 
-// Initialize with 5 random smileys
+// Функция для обновления страницы со случайными смайлами
+function refreshSmileys() {
+    // Очистить массивы смайлов и отображаемых смайлов
+    smileys = [];
+    displayedSmileys = [];
+
+    // Очистить контейнеры смайлов и голосований
+    smileContainer.innerHTML = "";
+    voteContainer.innerHTML = "";
+
+    // Переинициализировать страницу с 5 случайными смайлами
+    initializeRandomSmileys();
+}
+
+// Обработчик нажатия кнопки "Обновить"
+document.querySelector('#refresh-button').addEventListener('click', refreshSmileys);
+
+// Инициализация страницы с 5 случайными смайлами
 function initializeRandomSmileys() {
     while (displayedSmileys.length < 5 && allSmileys.length > 0) {
         const randomIndex = Math.floor(Math.random() * allSmileys.length);
@@ -151,5 +169,5 @@ function initializeRandomSmileys() {
     updateVotes();
 }
 
-// Call the initialization function
+// Вызов функции инициализации
 initializeRandomSmileys();
