@@ -203,4 +203,8 @@ h1:hover {
   color: #ff6600;
   transform: scale(1.1); }
 
+#audio {
+  padding: 15px;
+  margin: auto; }
+
 /*# sourceMappingURL=style.css.map */
