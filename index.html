@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,10 +12,23 @@
 
 <div id="main-container" class="main-container">
     <div id="smile-container" class="smile-container">
-
+        <!-- Элементы смайлов будут добавлены динамически здесь -->
     </div>
     <div id="vote-container" class="vote-container">
+        <!-- Счетчики нажатий будут добавлены динамически здесь -->
+    </div>
+    <button id="remove-smiley-button">Remove smiley</button>
+    <button id="add-smiley-button">Add smiley</button>
+</div>
 
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>Виберіть смайлик для додавання:</h2>
+        <div class="smiley-list">
+            <!-- Варианты смайликов будут добавлены динамически здесь -->
+        </div>
+        <button id="add-modal-button">Add</button>
+        <button id="close-modal-button">Закрити</button>
     </div>
 </div>
 
