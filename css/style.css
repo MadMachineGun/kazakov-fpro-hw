@@ -23,7 +23,10 @@ body {
     font-size: 36px;
     cursor: pointer;
     margin-bottom: -9px;
-    transition: transform 0.2s ease-in-out; }
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center; }
     .smile-container .smiley:hover {
       transform: scale(1.2); }
 
@@ -35,7 +38,7 @@ body {
     font-size: 36px;
     font-weight: bold;
     color: #ff0000;
-    margin: 7px 20px 5px 2px;
+    margin: 9px 20px 5px 2px;
     transition: color 0.2s ease-in-out; }
     .vote-container .vote-score:hover {
       color: #ff5500; }
@@ -89,14 +92,5 @@ button {
   justify-content: center;
   height: 300px;
   flex-direction: column; }
-
-.smiley {
-  font-size: 36px;
-  cursor: pointer;
-  margin-bottom: 5px;
-  transition: transform 0.2s ease-in-out;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
