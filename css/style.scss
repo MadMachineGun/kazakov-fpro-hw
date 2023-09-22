@@ -26,7 +26,7 @@ body {
   .smiley {
     font-size: 36px;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-bottom: -9px;
     transition: transform 0.2s ease-in-out;
 
     &:hover {
@@ -115,5 +115,6 @@ button {
   height: 300px;
   flex-direction: column;
 }
+
 
 

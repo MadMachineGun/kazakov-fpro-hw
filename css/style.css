@@ -22,7 +22,7 @@ body {
   .smile-container .smiley {
     font-size: 36px;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-bottom: -9px;
     transition: transform 0.2s ease-in-out; }
     .smile-container .smiley:hover {
       transform: scale(1.2); }
