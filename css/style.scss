@@ -116,5 +116,14 @@ button {
   flex-direction: column;
 }
 
+.smiley {
+  font-size: 36px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
 
 
