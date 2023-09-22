@@ -5,4 +5,5 @@ const hours = prompt('Введіть кількість годин:');
 const seconds = hours * 3600;
 
 alert(`Кількість секунд у ${hours} годинах: ${seconds} секунд`);
+
 console.log(`Кількість секунд у ${hours} годинах: ${seconds} секунд`)
