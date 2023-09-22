@@ -18,7 +18,6 @@ let smileys = [];
 // Создаем контейнеры для смайлов и голосований
 let smileContainer = document.querySelector('#smile-container');
 let voteContainer = document.querySelector('#vote-container');
-let removeSmileyButton = document.querySelector('#remove-smiley-button');
 let addSmileyButton = document.querySelector('#add-smiley-button');
 let modal = document.querySelector('#modal');
 let addModalButton = document.querySelector('#add-modal-button');
@@ -45,7 +44,21 @@ function showSmiles() {
     displayedSmileys.forEach((item, index) => {
         let smileElement = document.createElement('div');
         smileElement.classList.add('smiley');
-        smileElement.textContent = `${index + 1}: ${item.smile}`;
+
+        // Создаем элемент для крестика удаления
+        let removeButton = document.createElement('button');
+        removeButton.classList.add('remove-button');
+        removeButton.textContent = '❌';
+
+        removeButton.addEventListener('click', () => {
+            const selectedIndex = smileElement.dataset.index;
+            displayedSmileys.splice(selectedIndex, 1);
+            smileys.splice(selectedIndex, 1);
+            showSmiles();
+            updateVotes();
+        });
+
+        smileElement.textContent = `${item.smile}`;
         smileElement.dataset.index = index.toString();
 
         smileElement.addEventListener('click', () => {
@@ -53,6 +66,9 @@ function showSmiles() {
             smileys[selectedIndex].voteCount++;
             updateVotes();
         });
+
+        // Добавляем элемент крестика удаления перед смайлом
+        smileElement.insertBefore(removeButton, smileElement.firstChild);
 
         smileContainer.appendChild(smileElement);
     });
@@ -64,18 +80,6 @@ addSmileyButton.addEventListener('click', () => {
         modal.style.display = 'block';
     } else {
         alert('Ви досягли максимальної кількості смайлів (50)');
-    }
-});
-
-// Удаление смайла по его индексу
-removeSmileyButton.addEventListener('click', () => {
-    const indexToRemove = parseInt(prompt('Введіть номер смайлика для видалення')) - 1;
-    if (!isNaN(indexToRemove) && indexToRemove >= 0 && indexToRemove < displayedSmileys.length) {
-        const smileyIndex = displayedSmileys[indexToRemove].index;
-        displayedSmileys.splice(indexToRemove, 1);
-        smileys.splice(smileyIndex, 1);
-        showSmiles();
-        updateVotes();
     }
 });
 
@@ -102,7 +106,6 @@ function populateModal() {
                     const newSmiley = {
                         smile: smiley,
                         voteCount: 0,
-                        index: displayedSmileys.length,
                     };
                     smileys.push(newSmiley);
                     displayedSmileys.push(newSmiley);
@@ -158,7 +161,6 @@ function initializeRandomSmileys() {
         const newSmiley = {
             smile: randomSmiley,
             voteCount: 0,
-            index: displayedSmileys.length,
         };
 
         smileys.push(newSmiley);
@@ -171,3 +173,7 @@ function initializeRandomSmileys() {
 
 // Вызов функции инициализации
 initializeRandomSmileys();
+
+
+
+
