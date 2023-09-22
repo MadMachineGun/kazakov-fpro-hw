@@ -51,12 +51,15 @@ function showSmiles() {
         removeButton.textContent = '❌';
 
         removeButton.addEventListener('click', () => {
-            const selectedIndex = smileElement.dataset.index;
-            displayedSmileys.splice(selectedIndex, 1);
-            smileys.splice(selectedIndex, 1);
-            showSmiles();
-            updateVotes();
+            const selectedIndex = parseInt(smileElement.dataset.index, 10); // Преобразуем в число с помощью parseInt
+            if (!isNaN(selectedIndex)) {
+                displayedSmileys.splice(selectedIndex, 1);
+                smileys.splice(selectedIndex, 1);
+                showSmiles();
+                updateVotes();
+            }
         });
+
 
         smileElement.textContent = `${item.smile}`;
         smileElement.dataset.index = index.toString();
