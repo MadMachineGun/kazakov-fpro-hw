@@ -26,13 +26,16 @@ function shuffleArray(array) {
 
 console.log(`Task 24.2: Розбити за цифрами п'ятизначне число і вивести у вихідному порядку через пробіл.`);
 
-const number = prompt('Введіть п\'ятизначне число:');
-if (number.length !== 5 || isNaN(number)) {
+const inputNumber = prompt('Введіть п\'ятизначне число:');
+const number = Number(inputNumber);
+
+if (inputNumber.length !== 5 || isNaN(number)) {
     console.log('Введене значення не є п\'ятизначним числом.');
 } else {
-
-    const digits = number.split('');
-    console.log('Розділені цифри:', digits.join(' '));
+    const digits = inputNumber.split('');
+    const result = digits.join(' ');
+    console.log('Результат розбиття:', result);
 }
+
 
 
