@@ -14,6 +14,7 @@
             Your browser does not support the audio element.
         </audio>
     </div>
+
     <section class="reg-form">
         <form id="registration-form" autocomplete="off">
             <label for="first-name">First Name:</label>
@@ -65,6 +66,7 @@
     <section id="user-table" class="hidden">
         <h2>Registration Data:</h2>
         <table>
+            <!-- Тут буде виведена інформація про користувача -->
         </table>
         <button type="button" id="subscribe-button">Subscribe</button>
     </section>
@@ -74,25 +76,26 @@
             <div class="start-screen">
                 <h1>Guitar Shop</h1>
                 <button class="categories-button">Categories</button>
-                <button type="button" id="my-orders-button">My Orders</button>
             </div>
+            <button type="button" id="my-orders-button">My Orders</button>
+            <button type="button" id="return-button" class="hidden">Return</button>
             <div class="categories-list hidden">
+                <!-- Тут будуть виведені категорії товарів -->
             </div>
             <div class="products-list hidden">
+                <!-- Тут будуть виведені товари вибраної категорії -->
             </div>
             <div class="product-details hidden">
-                <img src="" alt="" class="product-image">
-                <h2 class="product-name"></h2>
-                <p class="product-description"></p>
-                <p class="product-price"></p>
-                <button class="buy-button">Buy It!</button>
+                <!-- Тут будуть виведені деталі вибраного товару -->
             </div>
             <div class="purchase-success-message hidden">
                 <p>Thank you for your purchase!</p>
             </div>
             <section id="my-orders" class="hidden">
                 <h2>Мої замовлення:</h2>
-                <ul id="order-list"></ul>
+                <ul id="order-list">
+                    <!-- Тут будуть виведені замовлення -->
+                </ul>
             </section>
         </div>
     </section>
@@ -101,3 +104,112 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+<!---->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Registration Form</title>-->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="main-wrapper">-->
+<!--    <div class="audio-player">-->
+<!--        <audio id="audio" controls>-->
+<!--            <source src="audio/swallow_the_sun.mp3" type="audio/mpeg">-->
+<!--            Your browser does not support the audio element.-->
+<!--        </audio>-->
+<!--    </div>-->
+
+<!--    <section class="reg-form">-->
+<!--        <form id="registration-form" autocomplete="off">-->
+<!--            <label for="first-name">First Name:</label>-->
+<!--            <input type="text" id="first-name" name="first-name" required><br>-->
+
+<!--            <label for="last-name">Last Name:</label>-->
+<!--            <input type="text" id="last-name" name="last-name" required><br>-->
+
+<!--            <label for="address">Address:</label>-->
+<!--            <input type="text" id="address" name="address" required><br>-->
+
+<!--            <label for="email">Email:</label>-->
+<!--            <input type="email" id="email" name="email" required><br>-->
+
+<!--            <label for="birthdate">Date of Birth (DD.MM.YYYY):</label>-->
+<!--            <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>-->
+
+<!--            <label>Gender:</label>-->
+<!--            <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male-->
+<!--            <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>-->
+
+<!--            <label for="city">City:</label>-->
+<!--            <select id="city" name="city">-->
+<!--                <option value="">Select a city</option>-->
+<!--                <option value="kyiv">Kyiv</option>-->
+<!--                <option value="lviv">Lviv</option>-->
+<!--                <option value="odessa">Odessa</option>-->
+<!--                <option value="paris">Paris</option>-->
+<!--                <option value="madrid">Madrid</option>-->
+<!--                <option value="london">London</option>-->
+<!--                <option value="berlin">Berlin</option>-->
+<!--                <option value="rome">Rome</option>-->
+<!--                <option value="lisbon">Lisbon</option>-->
+<!--            </select><br>-->
+
+<!--            <label>Languages:</label><br>-->
+<!--            <label for="english"></label>-->
+<!--            <input type="checkbox" id="english" name="languages" value="English">English<br>-->
+<!--            <label for="spanish"></label>-->
+<!--            <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>-->
+<!--            <label for="french"></label>-->
+<!--            <input type="checkbox" id="french" name="languages" value="French">French<br>-->
+<!--            <label for="ukrainian"></label>-->
+<!--            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>-->
+<!--            <button type="button" id="save-button">Save</button>-->
+<!--        </form>-->
+
+<!--    </section>-->
+
+<!--    <section id="user-table" class="hidden">-->
+<!--        <h2>Registration Data:</h2>-->
+<!--        <table>-->
+<!--        </table>-->
+<!--        <button type="button" id="subscribe-button">Subscribe</button>-->
+<!--    </section>-->
+
+<!--    <section class="shop">-->
+<!--        <div class="container">-->
+<!--            <div class="start-screen">-->
+<!--                <h1>Guitar Shop</h1>-->
+<!--                <button class="categories-button">Categories</button>-->
+<!--            </div>-->
+<!--            <div class="categories-list hidden">-->
+<!--            </div>-->
+<!--            <div class="products-list hidden">-->
+<!--            </div>-->
+<!--            <div class="product-details hidden">-->
+<!--                <img src="" alt="" class="product-image">-->
+<!--                <h2 class="product-name"></h2>-->
+<!--                <p class="product-description"></p>-->
+<!--                <p class="product-price"></p>-->
+<!--            </div>-->
+<!--            <div class="purchase-success-message hidden">-->
+<!--                <p>Thank you for your purchase!</p>-->
+<!--            </div>-->
+<!--            <section id="my-orders" class="hidden">-->
+<!--                <h2>Мої замовлення:</h2>-->
+<!--                <ul id="order-list"></ul>-->
+<!--            </section>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--    <div class="order-list">-->
+<!--        <button type="button" id="my-orders-button">My Orders</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script src="js/script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
