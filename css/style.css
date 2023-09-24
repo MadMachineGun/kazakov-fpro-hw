@@ -101,6 +101,7 @@ body:hover {
   background-color: #cccccc; }
 
 .container {
+  display: flex;
   text-align: center;
   margin: 16px 8px 16px 8px;
   max-width: 600px;
