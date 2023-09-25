@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myOrdersButton = document.getElementById('my-orders-button');
     const myOrdersSection = document.getElementById('my-orders');
     const orderList = document.getElementById('order-list');
-    const returnButton = document.getElementById('return-button'); // Додали кнопку "Return"
+    const returnButton = document.getElementById('return-button');
 
     function getOrders() {
         return JSON.parse(localStorage.getItem('orders')) || [];
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
             orders.forEach((order, index) => {
                 const orderItem = document.createElement('li');
                 orderItem.innerHTML = `
-                    <p>Замовлення #${index + 1}</p>
-                    <p>Товар: ${order.name}</p> <!-- Змінено на відображення назви товару -->
-                    <p>Дата: ${order.date}</p>
-                    <p>Ціна: ${order.price}</p>
-                    <button class="delete-order-button" data-index="${index}">Видалити</button>
+                    <p>Order #${index + 1}</p>
+                    <p>Product: ${order.name}</p> 
+                    <p>Date: ${order.date}</p>
+                    <p>${order.price}</p>
+                    <button class="delete-order-button" data-index="${index}">Remove</button>
                 `;
                 orderList.appendChild(orderItem);
             });
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         productsList.classList.add('hidden');
         productDetails.classList.add('hidden');
         startScreen.classList.add('hidden');
-        returnButton.classList.remove('hidden'); // Відобразити кнопку "Return"
+        returnButton.classList.remove('hidden');
         myOrdersSection.classList.remove('hidden');
         displayOrders();
     });
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         productsList.classList.remove('hidden');
         productDetails.classList.remove('hidden');
         startScreen.classList.remove('hidden');
-        returnButton.classList.add('hidden'); // Приховати кнопку "Return"
+        returnButton.classList.add('hidden');
         myOrdersSection.classList.add('hidden');
     });
 

@@ -102,9 +102,9 @@ body:hover {
 
 .container {
   display: flex;
+  max-width: 400px;
   text-align: center;
   margin: 16px 8px 16px 8px;
-  max-width: 600px;
   padding: 20px;
   border-radius: 10px;
   background-size: cover;
@@ -112,7 +112,7 @@ body:hover {
   background-color: #dce8f5;
   transition: background-color 0.3s; }
 
-.categories-button, #my-orders-button {
+.categories-button, #my-orders-button, #return-button {
   font-size: 18px;
   padding: 10px 20px;
   background-color: #4caf50;
@@ -237,5 +237,34 @@ h1:hover {
 
 .product-list-item:hover {
   background-color: #e5e5e5; }
+
+#my-orders-button {
+  margin-right: 30%; }
+
+#my-orders-button:hover {
+  background-color: #45a049; }
+
+#return-button {
+  width: 30px;
+  height: 40px;
+  margin-right: 16px;
+  line-height: 16px; }
+
+#return-button:hover {
+  background-color: #45a049; }
+
+.delete-order-button {
+  color: #f40808;
+  border: solid 2px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s; }
 
 /*# sourceMappingURL=style.css.map */
