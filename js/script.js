@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
     const productsData = [
         {
             category: 'B.C. Rich',
