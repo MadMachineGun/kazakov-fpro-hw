@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myOrdersSection = document.getElementById('my-orders');
     const orderList = document.getElementById('order-list');
     const returnButton = document.getElementById('return-button');
+    const totalAmountDisplay = document.getElementById('total-amount');
 
     function getOrders() {
         return JSON.parse(localStorage.getItem('orders')) || [];
@@ -27,18 +28,53 @@ document.addEventListener('DOMContentLoaded', function () {
         if (orders.length === 0) {
             orderList.innerHTML = '<p>You have no orders yet.</p>';
         } else {
+            let totalAmount = 0;
             orders.forEach((order, index) => {
                 const orderItem = document.createElement('li');
                 orderItem.innerHTML = `
                     <p>Order #${index + 1}</p>
                     <p>Product: ${order.name}</p>
                     <p>Date: ${order.date}</p>
-                    <p>${order.price}</p>
+                    <p>Price: ${order.price}</p>
+                    <label for="quantity-${index}">Quantity:</label>
+                    <input type="number" id="quantity-${index}" class="quantity-input" value="${order.quantity || 1}" min="1">
+                    <p>Total: <span class="total-price">${(parseFloat(order.price) * (order.quantity || 1)).toFixed(2)}</span></p>
                     <button class="delete-order-button" data-index="${index}">Remove</button>
                 `;
                 orderList.appendChild(orderItem);
+
+                const quantityInput = orderItem.querySelector(`#quantity-${index}`);
+                const totalPriceDisplay = orderItem.querySelector('.total-price');
+
+                quantityInput.addEventListener('input', () => {
+                    const newQuantity = parseInt(quantityInput.value);
+                    if (newQuantity >= 1) {
+                        order.quantity = newQuantity;
+                        totalPriceDisplay.textContent = (parseFloat(order.price) * newQuantity).toFixed(2);
+                        saveOrders(orders);
+                        updateTotalAmount();
+                    } else {
+                        alert('Quantity should be at least 1.');
+                        quantityInput.value = order.quantity || 1;
+                    }
+                });
+
+                totalAmount += parseFloat(order.price) * (order.quantity || 1);
             });
+
+            totalAmountDisplay.textContent = totalAmount.toFixed(2);
         }
+    }
+
+    function updateTotalAmount() {
+        const orders = getOrders();
+        let totalAmount = 0;
+        orders.forEach(order => {
+            if (!isNaN(order.quantity)) {
+                totalAmount += parseFloat(order.price) * order.quantity;
+            }
+        });
+        totalAmountDisplay.textContent = totalAmount.toFixed(2);
     }
 
     myOrdersButton.addEventListener('click', () => {
@@ -49,12 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
         returnButton.classList.remove('hidden');
         myOrdersSection.classList.remove('hidden');
         displayOrders();
-
-        // Скрываем элементы .product-item
-        const productItems = document.querySelectorAll('.product-item');
-        productItems.forEach(item => {
-            item.style.display = 'none';
-        });
     });
 
     returnButton.addEventListener('click', () => {
@@ -64,12 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
         startScreen.classList.remove('hidden');
         returnButton.classList.add('hidden');
         myOrdersSection.classList.add('hidden');
-
-        // Показываем снова элементы .product-item
-        const productItems = document.querySelectorAll('.product-item');
-        productItems.forEach(item => {
-            item.style.display = 'block';
-        });
     });
 
     orderList.addEventListener('click', (event) => {
@@ -281,12 +305,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
-// Var 2
-// "use strict";
 //
 // document.addEventListener('DOMContentLoaded', function () {
 //     const categoriesButton = document.querySelector('.categories-button');
@@ -315,29 +333,17 @@ document.addEventListener('DOMContentLoaded', function () {
 //             orderList.innerHTML = '<p>You have no orders yet.</p>';
 //         } else {
 //             orders.forEach((order, index) => {
-//                 const orderItem = createOrderItem(order, index);
+//                 const orderItem = document.createElement('li');
+//                 orderItem.innerHTML = `
+//                     <p>Order #${index + 1}</p>
+//                     <p>Product: ${order.name}</p>
+//                     <p>Date: ${order.date}</p>
+//                     <p>${order.price}</p>
+//                     <button class="delete-order-button" data-index="${index}">Remove</button>
+//                 `;
 //                 orderList.appendChild(orderItem);
 //             });
 //         }
-//     }
-//
-//     function createOrderItem(order, index) {
-//         const orderItem = document.createElement('li');
-//         orderItem.innerHTML = `
-//             <p>Order #${index + 1}</p>
-//             <p>Product: ${order.name}</p>
-//             <p>Date: ${order.date}</p>
-//             <p>Price: ${order.price}</p>
-//             <div class="quantity-container">
-//                 <button class="decrease-quantity-button" data-index="${index}">-</button>
-//                 <span class="quantity">${order.quantity}</span>
-//                 <button class="increase-quantity-button" data-index="${index}">+</button>
-//             </div>
-//             <p>Total: $<span class="total">${(order.price * order.quantity).toFixed(2)}</span></p>
-//             <button class="delete-order-button" data-index="${index}">Remove</button>
-//         `;
-//
-//         return orderItem;
 //     }
 //
 //     myOrdersButton.addEventListener('click', () => {
@@ -372,41 +378,14 @@ document.addEventListener('DOMContentLoaded', function () {
 //     });
 //
 //     orderList.addEventListener('click', (event) => {
-//         const target = event.target;
-//         if (target.classList.contains('delete-order-button')) {
-//             const index = parseInt(target.getAttribute('data-index'), 10);
+//         if (event.target.classList.contains('delete-order-button')) {
+//             const index = parseInt(event.target.getAttribute('data-index'), 10);
 //             const orders = getOrders();
 //             orders.splice(index, 1);
 //             saveOrders(orders);
 //             displayOrders();
-//         } else if (target.classList.contains('increase-quantity-button')) {
-//             const index = parseInt(target.getAttribute('data-index'), 10);
-//             increaseQuantity(index);
-//         } else if (target.classList.contains('decrease-quantity-button')) {
-//             const index = parseInt(target.getAttribute('data-index'), 10);
-//             decreaseQuantity(index);
 //         }
 //     });
-//
-//     function increaseQuantity(index) {
-//         const orders = getOrders();
-//         if (index >= 0 && index < orders.length) {
-//             orders[index].quantity += 1;
-//             saveOrders(orders);
-//             displayOrders();
-//         }
-//     }
-//
-//     function decreaseQuantity(index) {
-//         const orders = getOrders();
-//         if (index >= 0 && index < orders.length) {
-//             if (orders[index].quantity > 1) {
-//                 orders[index].quantity -= 1;
-//                 saveOrders(orders);
-//                 displayOrders();
-//             }
-//         }
-//     }
 //
 //     const productsData = [
 //         {
@@ -603,3 +582,108 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 
+
+"use strict";
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const categoriesButton = document.querySelector('.categories-button');
+//     const categoriesList = document.querySelector('.categories-list');
+//     const productsList = document.querySelector('.products-list');
+//     const productDetails = document.querySelector('.product-details');
+//     const startScreen = document.querySelector('.start-screen');
+//     const myOrdersButton = document.getElementById('my-orders-button');
+//     const myOrdersSection = document.getElementById('my-orders');
+//     const orderList = document.getElementById('order-list');
+//     const returnButton = document.getElementById('return-button');
+//     const totalAmountDisplay = document.getElementById('total-amount');
+//
+//     function getOrders() {
+//         return JSON.parse(localStorage.getItem('orders')) || [];
+//     }
+//
+//     function saveOrders(orders) {
+//         localStorage.setItem('orders', JSON.stringify(orders));
+//     }
+//
+//     function displayOrders() {
+//         orderList.innerHTML = '';
+//
+//         const orders = getOrders();
+//         if (orders.length === 0) {
+//             orderList.innerHTML = '<p>You have no orders yet.</p>';
+//         } else {
+//             let totalAmount = 0;
+//             orders.forEach((order, index) => {
+//                 const orderItem = document.createElement('li');
+//                 orderItem.innerHTML = `
+//                     <p>Order #${index + 1}</p>
+//                     <p>Product: ${order.name}</p>
+//                     <p>Date: ${order.date}</p>
+//                     <p>Price: ${order.price}</p>
+//                     <label for="quantity-${index}">Quantity:</label>
+//                     <input type="number" id="quantity-${index}" class="quantity-input" value="${order.quantity || 1}" min="1">
+//                     <p>Total: <span class="total-price">${(parseFloat(order.price) * (order.quantity || 1)).toFixed(2)}</span></p>
+//                     <button class="delete-order-button" data-index="${index}">Remove</button>
+//                 `;
+//                 orderList.appendChild(orderItem);
+//
+//                 const quantityInput = orderItem.querySelector(`#quantity-${index}`);
+//                 const totalPriceDisplay = orderItem.querySelector('.total-price');
+//
+//                 quantityInput.addEventListener('input', () => {
+//                     const newQuantity = parseInt(quantityInput.value);
+//                     if (newQuantity >= 1) {
+//                         order.quantity = newQuantity;
+//                         totalPriceDisplay.textContent = (parseFloat(order.price) * newQuantity).toFixed(2);
+//                         saveOrders(orders);
+//                         updateTotalAmount();
+//                     } else {
+//                         alert('Quantity should be at least 1.');
+//                         quantityInput.value = order.quantity || 1;
+//                     }
+//                 });
+//
+//                 totalAmount += parseFloat(order.price) * (order.quantity || 1);
+//             });
+//
+//             totalAmountDisplay.textContent = totalAmount.toFixed(2);
+//         }
+//     }
+//
+//     function updateTotalAmount() {
+//         const orders = getOrders();
+//         let totalAmount = 0;
+//         orders.forEach(order => {
+//             totalAmount += parseFloat(order.price) * (order.quantity || 1);
+//         });
+//         totalAmountDisplay.textContent = totalAmount.toFixed(2);
+//     }
+//
+//     myOrdersButton.addEventListener('click', () => {
+//         categoriesList.classList.add('hidden');
+//         productsList.classList.add('hidden');
+//         productDetails.classList.add('hidden');
+//         startScreen.classList.add('hidden');
+//         returnButton.classList.remove('hidden');
+//         myOrdersSection.classList.remove('hidden');
+//         displayOrders();
+//     });
+//
+//     returnButton.addEventListener('click', () => {
+//         categoriesList.classList.remove('hidden');
+//         productsList.classList.remove('hidden');
+//         productDetails.classList.remove('hidden');
+//         startScreen.classList.remove('hidden');
+//         returnButton.classList.add('hidden');
+//         myOrdersSection.classList.add('hidden');
+//     });
+//
+//     orderList.addEventListener('click', (event) => {
+//         if (event.target.classList.contains('delete-order-button')) {
+//             const index = parseInt(event.target.getAttribute('data-index'), 10);
+//             const orders = getOrders();
+//             orders.splice(index, 1);
+//             saveOrders(orders);
+//             displayOrders();
+//         }
+//     });
