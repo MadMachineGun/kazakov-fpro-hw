@@ -261,12 +261,21 @@ h1:hover {
   margin: 10px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s; /* Добавляем анимацию для цвета фона и масштаба */
 }
 
+/* Изменение стиля и масштаба при наведении */
 .add-to-orders-button:hover {
-  background-color: #e55c00;
+  background-color: #e55c00; /* Новый цвет фона при наведении */
+  transform: scale(1.05); /* Немного увеличиваем масштаб кнопки */
 }
+
+/* Изменение стиля и масштаба при нажатии */
+.add-to-orders-button:active {
+  background-color: #00cc00; /* Зеленый цвет фона при нажатии */
+  transform: scale(0.95); /* Немного уменьшаем масштаб кнопки */
+}
+
 
 .product-list-item {
   display: inline-block;

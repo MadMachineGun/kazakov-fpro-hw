@@ -1,7 +1,3 @@
-
-
-
-
 // Строгий режим JavaScript, который обеспечивает более строгие правила и уменьшает вероятность ошибок.
 "use strict";
 
@@ -264,11 +260,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const productPrice = productItem.querySelector('p:nth-child(3)').textContent;
             const productImage = productItem.querySelector('.product-image').getAttribute('src');
             const date = new Date().toLocaleDateString();
-            const order = { date, price: productPrice, name: productName, image: productImage };
+            const order = {date, price: productPrice, name: productName, image: productImage};
             const orders = getOrders();
             orders.push(order);
             saveOrders(orders);
-            alert('Product added to orders.');
         }
     });
 
@@ -337,19 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('registration-form').reset();
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // // "use strict";
