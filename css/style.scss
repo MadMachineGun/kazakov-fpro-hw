@@ -261,19 +261,19 @@ h1:hover {
   margin: 10px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s; /* Добавляем анимацию для цвета фона и масштаба */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Изменение стиля и масштаба при наведении */
+
 .add-to-orders-button:hover {
-  background-color: #e55c00; /* Новый цвет фона при наведении */
-  transform: scale(1.05); /* Немного увеличиваем масштаб кнопки */
+  background-color: #e55c00;
+  transform: scale(1.05);
 }
 
-/* Изменение стиля и масштаба при нажатии */
+
 .add-to-orders-button:active {
-  background-color: #00cc00; /* Зеленый цвет фона при нажатии */
-  transform: scale(0.95); /* Немного уменьшаем масштаб кнопки */
+  background-color: #00cc00;
+  transform: scale(0.95);
 }
 
 
