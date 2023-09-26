@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>Order #${index + 1}</p>
                     <p>Product: ${order.name}</p>
                     <p>Date: ${order.date}</p>
-                    <p>Price: ${order.price}</p>
+                    <p>${order.price}</p>
                     <label for="quantity-${index}">Quantity:</label>
                     <input type="number" id="quantity-${index}" class="quantity-input" value="${order.quantity || 1}" min="1">
                     <p>Total: <span class="total-price">${(parseFloat(order.price) * (order.quantity || 1)).toFixed(2)}</span></p>
