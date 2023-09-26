@@ -84,6 +84,9 @@ button:active {
 .hidden {
   display: none; }
 
+.products-list {
+  display: block !important; }
+
 #user-table table {
   width: 100%;
   border-collapse: collapse;
