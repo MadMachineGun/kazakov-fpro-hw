@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>${order.price}</p>
                     <label for="quantity-${index}">Quantity:</label>
                     <input type="number" id="quantity-${index}" class="quantity-input" value="${order.quantity || 1}" min="1">
-                    <p>Total: <span class="total-price">${(parseFloat(order.price) * (order.quantity || 1)).toFixed(2)}</span></p>
+                    <p>Total: <span class="total-price">${(parseFloat(order.price) * (order?.quantity || 1)).toFixed(2)}</span></p>
                     <img src="${order.image}" alt="${order.name}" class="product-image"> 
                     <button class="delete-order-button" data-index="${index}">Remove</button>
                 `;
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const productPrice = productItem.querySelector('p:nth-child(3)').textContent;
             const productImage = productItem.querySelector('.product-image').getAttribute('src');
             const date = new Date().toLocaleDateString();
-            const order = {date, price: productPrice, name: productName, image: productImage};
+            const order = {date, price: productPrice.replace(`Price: $`, ``), name: productName, image: productImage};
             const orders = getOrders();
             orders.push(order);
             saveOrders(orders);
