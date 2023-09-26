@@ -84,9 +84,6 @@ button:active {
 .hidden {
   display: none; }
 
-.products-list {
-  display: block !important; }
-
 #user-table table {
   width: 100%;
   border-collapse: collapse;
@@ -121,9 +118,10 @@ body:hover {
   background-color: #dce8f5;
   transition: background-color 0.3s; }
 
-.categories-button, #my-orders-button, #return-button {
+.categories-button, #my-orders-button, #return-button, #total-amount {
   font-size: 18px;
   padding: 10px 20px;
+  margin-top: 0;
   background-color: #4caf50;
   color: white;
   border: none;
@@ -259,5 +257,9 @@ h1:hover {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s; }
+
+.quantity-input {
+  width: 50px;
+  height: 13px; }
 
 /*# sourceMappingURL=style.css.map */
