@@ -64,8 +64,8 @@
   margin-right: 5px;
 }
 
-.reg-form button, #user-table button {
-  background-color: #4caf50;
+button {
+  background-color: #ff6600;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -73,14 +73,24 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 10px 0;
+  margin: 10px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.reg-form button:hover, #user-table button:hover {
-  background-color: #45a049;
+button:hover {
+  background-color: #e55c00;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #00cc00;
+  transform: scale(0.95);
+}
+
+.reg-form button, #user-table button {
+  margin: 10px 0;
 }
 
 .hidden {
@@ -131,7 +141,6 @@ body:hover {
   transition: background-color 0.3s;
 }
 
-
 .categories-button, #my-orders-button, #return-button {
   font-size: 18px;
   padding: 10px 20px;
@@ -143,10 +152,9 @@ body:hover {
   transition: background-color 0.3s;
 }
 
-.categories-button:hover {
+.categories-button:hover, #my-orders-button:hover, #return-button:hover {
   background-color: #45a049;
 }
-
 
 .category-button {
   margin: 10px;
@@ -193,12 +201,10 @@ body:hover {
   background-color: #1976D2;
 }
 
-
 .product-image {
   max-width: 100%;
   height: auto;
 }
-
 
 .buy-button {
   background-color: #4caf50;
@@ -218,7 +224,6 @@ body:hover {
 .buy-button:hover {
   background-color: #45a049;
 }
-
 
 .purchase-success-message {
   margin-top: 20px;
@@ -248,34 +253,6 @@ h1:hover {
   padding: 15px;
   margin: auto;
 }
-
-.add-to-orders-button {
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-
-.add-to-orders-button:hover {
-  background-color: #e55c00;
-  transform: scale(1.05);
-}
-
-
-.add-to-orders-button:active {
-  background-color: #00cc00;
-  transform: scale(0.95);
-}
-
 
 .product-list-item {
   display: inline-block;
@@ -312,7 +289,7 @@ h1:hover {
 }
 
 .delete-order-button {
-  color: #f40808;
+  color: #fafafa;
   border: solid 2px;
   padding: 10px 20px;
   text-align: center;
@@ -325,3 +302,4 @@ h1:hover {
   border-radius: 5px;
   transition: background-color 0.3s;
 }
+
