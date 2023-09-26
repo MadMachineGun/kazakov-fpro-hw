@@ -118,7 +118,7 @@ body:hover {
   background-color: #dce8f5;
   transition: background-color 0.3s; }
 
-.categories-button, #my-orders-button, #return-button, #total-amount {
+.categories-button, #my-orders-button, #return-button {
   font-size: 18px;
   padding: 10px 20px;
   margin-top: 0;
@@ -261,5 +261,8 @@ h1:hover {
 .quantity-input {
   width: 50px;
   height: 13px; }
+
+#total-amount {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
