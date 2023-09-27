@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+table {
+  width: 50%;
+  margin-bottom: 20px;
+  border-collapse: collapse; }
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2; }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px; }
+
+th {
+  background-color: #333;
+  color: white; }
+
+.cell {
+  font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */
