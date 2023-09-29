@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
+    <h1>Homework 30</h1>
+    <h2>Two buttons</h2>
+    <p>На сторінці є дві кнопки. - переадресовується на інший сайт
+        (за раніше введеним посиланням).
+        Реалізувати перевірку на http/https. Якщо протокол не вказаний - додаємо</p>
 
+    <label for="urlInput">Enter URL:</label>
+    <input type="text" id="urlInput" name="urlInput" placeholder="https://example.com">
+
+    <button id="button1" class="button green">Перейти на сайт з http</button>
+
+    <button id="button2" class="button blue">Перейти на сайт з https</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
