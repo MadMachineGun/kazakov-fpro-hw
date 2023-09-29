@@ -1,6 +1,79 @@
 
 "use strict";
 
+// Данные о продуктах.
+const productsData = [
+    {
+        category: 'B.C. Rich',
+        items: [
+            {
+                name: 'B.C. Rich Bass',
+                description: 'Electric Bass guitar - B.C. Rich "Bass"',
+                price: '$899.99',
+                image: 'img/B.C._Rich_Bass.png',
+            },
+            {
+                name: 'B.C. Rich KKV',
+                description: 'Electric guitar - B.C. Rich "KKV"',
+                price: '$799.99',
+                image: 'img/B.C._Rich_KKV.png',
+            },
+            {
+                name: 'B.C. Rich Warlock',
+                description: 'Electric guitar - B.C. Rich "Warlock"',
+                price: '$999.99',
+                image: 'img/B.C._Rich_Warlock.png',
+            },
+        ],
+    },
+    {
+        category: 'Gibson',
+        items: [
+            {
+                name: 'Gibson Explorer',
+                description: 'Electric guitar - "Gibson Explorer"',
+                price: '$1249.99',
+                image: 'img/Gibson_Explorer.png',
+            },
+            {
+                name: 'Gibson Flying V',
+                description: 'Electric guitar - "Gibson Flying V"',
+                price: '$1149.99',
+                image: 'img/Gibson_Flying_V.png',
+            },
+            {
+                name: 'Gibson SG Special',
+                description: 'Electric guitar - Gibson "SG Special"',
+                price: '$1099.99',
+                image: 'img/Gibson_SG_Special.png',
+            },
+        ],
+    },
+    {
+        category: 'Jackson',
+        items: [
+            {
+                name: 'Jackson DK2M',
+                description: 'Electric guitar - Jackson "DK2M"',
+                price: '$799.99',
+                image: 'img/Jackson_DK2M.png',
+            },
+            {
+                name: 'Jackson Kelly',
+                description: 'Electric guitar - Jackson "Kelly"',
+                price: '$849.99',
+                image: 'img/Jackson_Kelly.png',
+            },
+            {
+                name: 'Jackson Rhoads',
+                description: 'Electric guitar - Jackson "Rhoads"',
+                price: '$899.99',
+                image: 'img/Jackson_Rhoads.png',
+            },
+        ],
+    },
+];
+
 // Когда весь документ будет загружен, выполнится функция, содержащая весь скрипт.
 document.addEventListener('DOMContentLoaded', function () {
     // Получаем ссылки на HTML-элементы, которые будут использоваться в скрипте.
@@ -14,80 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const orderList = document.getElementById('order-list');
     const returnButton = document.getElementById('return-button');
     const totalAmountDisplay = document.getElementById('total-amount');
-
-    // Данные о продуктах.
-    const productsData = [
-        {
-            category: 'B.C. Rich',
-            items: [
-                {
-                    name: 'B.C. Rich Bass',
-                    description: 'Electric Bass guitar - B.C. Rich "Bass"',
-                    price: '$899.99',
-                    image: 'img/B.C._Rich_Bass.png',
-                },
-                {
-                    name: 'B.C. Rich KKV',
-                    description: 'Electric guitar - B.C. Rich "KKV"',
-                    price: '$799.99',
-                    image: 'img/B.C._Rich_KKV.png',
-                },
-                {
-                    name: 'B.C. Rich Warlock',
-                    description: 'Electric guitar - B.C. Rich "Warlock"',
-                    price: '$999.99',
-                    image: 'img/B.C._Rich_Warlock.png',
-                },
-            ],
-        },
-        {
-            category: 'Gibson',
-            items: [
-                {
-                    name: 'Gibson Explorer',
-                    description: 'Electric guitar - "Gibson Explorer"',
-                    price: '$1249.99',
-                    image: 'img/Gibson_Explorer.png',
-                },
-                {
-                    name: 'Gibson Flying V',
-                    description: 'Electric guitar - "Gibson Flying V"',
-                    price: '$1149.99',
-                    image: 'img/Gibson_Flying_V.png',
-                },
-                {
-                    name: 'Gibson SG Special',
-                    description: 'Electric guitar - Gibson "SG Special"',
-                    price: '$1099.99',
-                    image: 'img/Gibson_SG_Special.png',
-                },
-            ],
-        },
-        {
-            category: 'Jackson',
-            items: [
-                {
-                    name: 'Jackson DK2M',
-                    description: 'Electric guitar - Jackson "DK2M"',
-                    price: '$799.99',
-                    image: 'img/Jackson_DK2M.png',
-                },
-                {
-                    name: 'Jackson Kelly',
-                    description: 'Electric guitar - Jackson "Kelly"',
-                    price: '$849.99',
-                    image: 'img/Jackson_Kelly.png',
-                },
-                {
-                    name: 'Jackson Rhoads',
-                    description: 'Electric guitar - Jackson "Rhoads"',
-                    price: '$899.99',
-                    image: 'img/Jackson_Rhoads.png',
-                },
-            ],
-        },
-    ];
-
 
     // Функция для получения заказов из локального хранилища, либо возвращает пустой массив.
     function getOrders() {
@@ -201,78 +200,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // // Данные о продуктах.
-    // const productsData = [
-    //     {
-    //         category: 'B.C. Rich',
-    //         items: [
-    //             {
-    //                 name: 'B.C. Rich Bass',
-    //                 description: 'Electric Bass guitar - B.C. Rich "Bass"',
-    //                 price: '$899.99',
-    //                 image: 'img/B.C._Rich_Bass.png',
-    //             },
-    //             {
-    //                 name: 'B.C. Rich KKV',
-    //                 description: 'Electric guitar - B.C. Rich "KKV"',
-    //                 price: '$799.99',
-    //                 image: 'img/B.C._Rich_KKV.png',
-    //             },
-    //             {
-    //                 name: 'B.C. Rich Warlock',
-    //                 description: 'Electric guitar - B.C. Rich "Warlock"',
-    //                 price: '$999.99',
-    //                 image: 'img/B.C._Rich_Warlock.png',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         category: 'Gibson',
-    //         items: [
-    //             {
-    //                 name: 'Gibson Explorer',
-    //                 description: 'Electric guitar - "Gibson Explorer"',
-    //                 price: '$1249.99',
-    //                 image: 'img/Gibson_Explorer.png',
-    //             },
-    //             {
-    //                 name: 'Gibson Flying V',
-    //                 description: 'Electric guitar - "Gibson Flying V"',
-    //                 price: '$1149.99',
-    //                 image: 'img/Gibson_Flying_V.png',
-    //             },
-    //             {
-    //                 name: 'Gibson SG Special',
-    //                 description: 'Electric guitar - Gibson "SG Special"',
-    //                 price: '$1099.99',
-    //                 image: 'img/Gibson_SG_Special.png',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         category: 'Jackson',
-    //         items: [
-    //             {
-    //                 name: 'Jackson DK2M',
-    //                 description: 'Electric guitar - Jackson "DK2M"',
-    //                 price: '$799.99',
-    //                 image: 'img/Jackson_DK2M.png',
-    //             },
-    //             {
-    //                 name: 'Jackson Kelly',
-    //                 description: 'Electric guitar - Jackson "Kelly"',
-    //                 price: '$849.99',
-    //                 image: 'img/Jackson_Kelly.png',
-    //             },
-    //             {
-    //                 name: 'Jackson Rhoads',
-    //                 description: 'Electric guitar - Jackson "Rhoads"',
-    //                 price: '$899.99',
-    //                 image: 'img/Jackson_Rhoads.png',
-    //             },
-    //         ],
-    //     },
-    // ];
 
     // Функция для отображения категорий продуктов.
     function displayCategories() {
