@@ -32,7 +32,9 @@ for (let i = 1; i <= 100; i++) {
 console.log("\n");
 
 // Завдання 4
-console.log("Завдання 4: Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).");
+console.log("Завдання 4: Дане ціле число. З'ясувати, чи є воно простим " +
+    "(простим називається число, більше 1, які не мають інших дільників крім 1 і себе).");
+
 function isPrime(num) {
     if (num <= 1) {
         return false;
@@ -57,7 +59,9 @@ if (isPrime(numberToCheck)) {
 console.log("\n");
 
 // Завдання 5
-console.log("Завдання 5:Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).");
+console.log("Завдання 5:Дане деяке число. Визначити, чи можна одержати це число" +
+    " шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).");
+
 function canGetByPowerOfThree(number) {
     if (number === 1) {
         return true;
@@ -75,7 +79,7 @@ function canGetByPowerOfThree(number) {
 }
 
 const numberToCheckPowerOfThree = parseInt(prompt("Введіть ціле число:"));
-console.log(`Ваше число:`,  numberToCheckPowerOfThree);
+console.log(`Ваше число:`, numberToCheckPowerOfThree);
 
 if (canGetByPowerOfThree(numberToCheckPowerOfThree)) {
     console.log(`Можна отримати число ${numberToCheckPowerOfThree} зведенням числа 3 у деякий ступінь`);
