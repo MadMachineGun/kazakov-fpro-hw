@@ -1,13 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Building with Apartments</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<h1>Building with Apartments</h1>
+<div class="building">
+    <h2>Building (total 6 apartments)</h2>
+    <div class="apartments" id="apartments-container"></div>
+</div>
+<button id="reserveButton">Reserve an apartment</button>
+<div id="messageBox"></div>
+<div class="modal" id="maxApartmentsModal">
+    <div class="modal-content">
+        <span class="close" id="modalClose">&times;</span>
+        <div class="modal-body">
+            The maximum number of apartments in the building has already been reached.
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
