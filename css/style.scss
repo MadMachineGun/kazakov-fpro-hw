@@ -9,7 +9,7 @@ body {
 }
 
 .car-info {
-  background-color: #fff;
+  background-color: #e2eff4;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -26,6 +26,9 @@ body {
   h3 {
     color: #333;
     margin: 0;
+  }
+  .error-message{
+   color: #ff1c13;
   }
 
   .car-details {
@@ -44,7 +47,7 @@ body {
   }
 
   &:hover {
-    background-color: #f2f2f2;
+    background-color: #ceede6;
     transition: background-color 0.3s ease;
   }
 }

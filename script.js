@@ -23,7 +23,7 @@ class Car {
             this.owner = owner;
         } else {
             this.owner = null;
-            this.errorMessage = `Owner ${owner.firstName} ${owner.lastName} cannot own the car due to being underage`;
+            this.errorMessage = `Owner ${owner.firstName} ${owner.lastName}, Age: 17, ${owner.firstName} ${owner.lastName} can't drive the car due to being underage!`;
         }
     }
 
