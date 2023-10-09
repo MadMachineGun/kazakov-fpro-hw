@@ -34,3 +34,13 @@
 
 
 
+const url = 'https://dummyjson.com/products/search?q=phone';
+const xhr = new XMLHttpRequest();
+
+xhr.open(`GET`, url);
+xhr.responseType = `json`;
+
+xhr.onload = () => {
+    console.log(xhr.response);
+};
+xhr.send();
