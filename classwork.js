@@ -49,3 +49,4 @@ xhr.send();
 //100 - info
 //300 - redirect
 //400 - error on client side 404, 403 forbidden, 401 unauthorized
+//500 - error on server side
