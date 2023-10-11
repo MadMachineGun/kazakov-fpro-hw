@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <label for="quantity-${index}">Quantity:</label>
                     <input type="number" id="quantity-${index}" class="quantity-input" value="${order.quantity || 1}" min="1">
                     <p>Total: <span class="total-price">${(parseFloat(order.price) * (order?.quantity || 1)).toFixed(2)}</span></p>
-                    <img src="${order.image}" alt="${order.name}" class="product-image"> 
+                    <img src="${order.image}" alt="${order.name}" class="product-image">
                     <button class="delete-order-button" data-index="${index}">Remove</button>
                 `;
                 // Добавляем элемент заказа в список заказов.
