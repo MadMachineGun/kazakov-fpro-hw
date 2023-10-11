@@ -1,13 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентів</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<div class="container">
+    <h2>Студенти:</h2>
+    <div class="student-list-container">
+        <ul class="student-list" id="student-list">
+        </ul>
+    </div>
 
+    <div class="student-details" id="student-details">
+    </div>
+
+    <div class="journal">
+        <div id="attendance-journal"></div>
+        <button id="save-journal">Підсумковий бал</button>
+        <h2>Позначте заняття, на яких студент був присутній,<br>
+           поставте оцінку за 100-бальною шкалою!
+        </h2>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

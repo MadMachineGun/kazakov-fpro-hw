@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.container {
+  background-color: #edf8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+.student-list-container ul.student-list {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .student-list-container ul.student-list li {
+    font-weight: bold;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; }
+    .student-list-container ul.student-list li:hover {
+      background-color: #d4dcc6; }
+
+.student-details h2 {
+  font-size: 18px;
+  margin-top: 20px; }
+.student-details p {
+  font-size: 16px;
+  margin: 5px 0; }
+
+.journal {
+  display: contents; }
+  .journal h2 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 15px; }
+  .journal table {
+    width: 100%;
+    border-collapse: collapse; }
+    .journal table th {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 2px solid #333; }
+    .journal table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+      position: relative; }
+      .journal table td::before {
+        content: attr(data-index);
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 20px;
+        text-align: right;
+        color: #555; }
+    .journal table tr:first-child input[type="checkbox"] {
+      margin: 0 5px; }
+    .journal table tr input[type="number"] {
+      width: 50px; }
+
+#save-journal {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; }
+  #save-journal:hover {
+    background-color: #005cbf; }
+
+#attendance-journal > h3:nth-child(1) {
+  text-align: center;
+  margin: 15px; }
+
+/*# sourceMappingURL=styles.css.map */
