@@ -32,8 +32,18 @@
 //         }
 //     }
 
-
-
+function sendRequest(method, url, data = null) {
+  return new Promise((resolve, reject));
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.responseType = `json`;
+    if (xhr.status > 400) {
+        reject(`error`);
+    } else {
+        resolve(xhr.response);
+    }
+};
+xhr
 const url = 'https://dummyjson.com/products/search?q=phone';
 const xhr = new XMLHttpRequest();
 
@@ -41,7 +51,11 @@ xhr.open(`GET`, url);
 xhr.responseType = `json`;
 
 xhr.onload = () => {
-    console.log(xhr.response);
+    if (xhr.status > 400) {
+        console.log(`error`);
+    } else {
+        console.log(xhr.response);
+    }
 };
 xhr.send();
 
