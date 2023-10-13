@@ -1,172 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
     <link rel="stylesheet" href="css/style.css">
+    <title>Metal Forever! Online Store</title>
 </head>
 <body>
-<div class="product">
-    <h2>Товар 1</h2>
-    <p>Ціна: $10</p>
-    <button class="buy-button">Купити</button>
-</div>
+<header>
+    <div class="header-left">
+        <a href="https://www.facebook.com"><img src="/img/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.twitter.com"><img src="/img/twitter-icon.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com"><img src="/img/instagram-icon.png" alt="Instagram"></a>
+    </div>
+    <h1>Metal Forever!</h1>
+</header>
 
-<div id="order-form" class="hidden">
-    <h2>Форма оформлення замовлення</h2>
-    <form id="order">
-        <label for="name">ПІБ покупця:</label>
-        <input type="text" id="name" required>
-        <label for="city">Місто:</label>
-        <select id="city" required>
-            <option value="Київ">Київ</option>
-            <option value="Харків">Харків</option>
-            <option value="Львів">Львів</option>
-        </select>
-        <label for="delivery">Склад Нової пошти:</label>
-        <input type="text" id="delivery" required>
-        <label for="payment">Післяплати або оплати банківською карткою:</label>
-        <input type="text" id="payment" required>
-        <label for="quantity">Кількість продукції:</label>
-        <input type="number" id="quantity" required>
-        <label for="comment">Коментар до замовлення:</label>
-        <textarea id="comment"></textarea>
-        <button type="submit">Підтвердити замовлення</button>
+<section class="shop">
+    <div class="container">
+        <div class="start-screen">
+            <h1>Guitar Shop</h1>
+            <button class="categories-button">Categories</button>
+        </div>
+
+        <button type="button" id="return-button" class="hidden">&#8592</button>
+        <div class="categories-list hidden">
+        </div>
+        <div class="products-list hidden">
+
+            <div class="product">
+                <h2>Product Name</h2>
+                <p>Product description</p>
+                <p>Price: $XX.XX</p>
+                <button class="buy-button">Buy</button>
+            </div>
+        </div>
+        <div class="product-details hidden">
+        </div>
+
+        <section id="my-orders" class="hidden">
+            <h2>My orders:</h2>
+            <ul id="order-list">
+            </ul>
+        </section>
+    </div>
+</section>
+
+<section class="reg-form">
+    <form id="registration-form" autocomplete="off">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required><br>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="birthdate">Date of Birth (DD.MM.YYYY):</label>
+        <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>
+
+        <label>Gender:</label>
+        <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male
+        <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>
+
+        <label for="city">City:</label>
+        <select id="city" name="city">
+            <option value="">Select a city</option>
+            <option value="kyiv">Kyiv</option>
+            <option value="lviv">Lviv</option>
+            <option value="odessa">Odessa</option>
+            <option value="paris">Paris</option>
+            <option value="madrid">Madrid</option>
+            <option value="london">London</option>
+            <option value="berlin">Berlin</option>
+            <option value="rome">Rome</option>
+            <option value="lisbon">Lisbon</option>
+        </select><br>
+
+        <label>Languages:</label><br>
+        <label for="english"></label>
+        <input type="checkbox" id="english" name="languages" value="English">English<br>
+        <label for="spanish"></label>
+        <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>
+        <label for="french"></label>
+        <input type="checkbox" id="french" name="languages" value="French">French<br>
+        <label for="ukrainian"></label>
+        <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>
+        <button type="button" id="save-button">Save</button>
     </form>
-</div>
 
-<div id="order-details" class="hidden">
-    <h2>Інформація про замовлення</h2>
-    <div id="product-info">
-        <h3>Інформація про товар:</h3>
-        <p>Товар: <span id="product-name"></span></p>
-        <p>Ціна: <span id="product-price"></span></p>
-    </div>
-    <div id="delivery-info">
-        <h3>Інформація про доставку:</h3>
-        <p>ПІБ покупця: <span id="customer-name"></span></p>
-        <p>Місто: <span id="customer-city"></span></p>
-        <p>Склад Нової пошти: <span id="customer-delivery"></span></p>
-        <p>Післяплати/Карта: <span id="customer-payment"></span></p>
-        <p>Кількість: <span id="order-quantity"></span></p>
-        <p>Коментар: <span id="order-comment"></span></p>
-    </div>
-</div>
+    <section id="user-table" class="hidden">
+        <h2>Registration Data:</h2>
+        <table>
+        </table>
+        <button type="button" id="subscribe-button">Subscribe</button>
+    </section>
+</section>
 
+<section class="cart hidden">
+    <h1>Shopping Cart</h1>
+
+    <div class="product">
+        <h2>Product Name</h2>
+        <p>Product description</p>
+        <p>Price: $XX.XX</p>
+        <button id="buy-button">Buy</button>
+    </div>
+
+    <div class="order-form hidden">
+        <h2>Order Form</h2>
+        <form id="order-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="destination">City:</label>
+            <select id="destination" required>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+                <option value="city3">City 3</option>
+            </select><br>
+
+            <label for="shipping-location">Shipping Location (Nova Poshta):</label>
+            <input type="text" id="shipping-location" required><br>
+
+            <label for="cash-on-delivery">Cash on Delivery</label>
+            <input type="radio" id="cash-on-delivery" name="payment-method" value="cash" required>
+            <label for="credit-card">Credit Card</label>
+            <input type="radio" id="credit-card" name="payment-method" value="credit-card" required><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" required><br>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments"></textarea><br>
+
+            <button type="button" id="submit-button">Submit Order</button>
+        </form>
+    </div>
+
+    <div class="order-details hidden">
+    <h2>Order Details</h2>
+    <p>Product Name: <span id="product-name"></span></p>
+    <p>Price: $<span id="product-price"></span></p>
+    <p>Full Name: <span id="order-name"></span></p>
+    <p>City: <span id="order-city"></span></p>
+    <p>Shipping Location (Nova Poshta): <span id="order-shipping-location"></span></p>
+    <p>Payment Method: <span id="order-payment-method"></span></p>
+    <p>Quantity: <span id="order-quantity"></span></p>
+    <p>Comments: <span id="order-comments"></span></p>
+    </div>
+
+    <div class="error-message hidden">
+        <p>Please fill in all required fields before submitting the order.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="contact-info">
+        <p>Email: metalforever@google.com</p>
+        <p>Phone: +3066-000-0000</p>
+        <p>Address: 123 Rock Street, Metalville</p>
+    </div>
+</footer>
 
 <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Registration Form</title>-->
-<!--    <link rel="stylesheet" href="css/style.css">-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="main-wrapper">-->
-<!--    <div class="audio-player">-->
-<!--        <audio id="audio" controls>-->
-<!--            <source src="audio/swallow_the_sun.mp3" type="audio/mpeg">-->
-<!--            Your browser does not support the audio element.-->
-<!--        </audio>-->
-<!--        <button type="button" id="my-orders-button">My Orders</button>-->
-<!--    </div>-->
-
-<!--    <section class="reg-form">-->
-<!--        <form id="registration-form" autocomplete="off">-->
-<!--            <label for="first-name">First Name:</label>-->
-<!--            <input type="text" id="first-name" name="first-name" required><br>-->
-
-<!--            <label for="last-name">Last Name:</label>-->
-<!--            <input type="text" id="last-name" name="last-name" required><br>-->
-
-<!--            <label for="address">Address:</label>-->
-<!--            <input type="text" id="address" name="address" required><br>-->
-
-<!--            <label for="email">Email:</label>-->
-<!--            <input type="email" id="email" name="email" required><br>-->
-
-<!--            <label for="birthdate">Date of Birth (DD.MM.YYYY):</label>-->
-<!--            <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>-->
-
-<!--            <label>Gender:</label>-->
-<!--            <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male-->
-<!--            <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>-->
-
-<!--            <label for="city">City:</label>-->
-<!--            <select id="city" name="city">-->
-<!--                <option value="">Select a city</option>-->
-<!--                <option value="kyiv">Kyiv</option>-->
-<!--                <option value="lviv">Lviv</option>-->
-<!--                <option value="odessa">Odessa</option>-->
-<!--                <option value="paris">Paris</option>-->
-<!--                <option value="madrid">Madrid</option>-->
-<!--                <option value="london">London</option>-->
-<!--                <option value="berlin">Berlin</option>-->
-<!--                <option value="rome">Rome</option>-->
-<!--                <option value="lisbon">Lisbon</option>-->
-<!--            </select><br>-->
-
-<!--            <label>Languages:</label><br>-->
-<!--            <label for="english"></label>-->
-<!--            <input type="checkbox" id="english" name="languages" value="English">English<br>-->
-<!--            <label for="spanish"></label>-->
-<!--            <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>-->
-<!--            <label for="french"></label>-->
-<!--            <input type="checkbox" id="french" name="languages" value="French">French<br>-->
-<!--            <label for="ukrainian"></label>-->
-<!--            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>-->
-<!--            <button type="button" id="save-button">Save</button>-->
-<!--        </form>-->
-<!--    </section>-->
-
-<!--    <section id="user-table" class="hidden">-->
-<!--        <h2>Registration Data:</h2>-->
-<!--        <table>-->
-
-<!--        </table>-->
-<!--        <button type="button" id="subscribe-button">Subscribe</button>-->
-<!--    </section>-->
-
-<!--    <section class="shop">-->
-<!--        <div class="container">-->
-<!--            <div class="start-screen">-->
-<!--                <h1>Guitar Shop</h1>-->
-<!--                <button class="categories-button">Categories</button>-->
-<!--            </div>-->
-
-<!--            <button type="button" id="return-button" class="hidden">&#8592</button>-->
-<!--            <div class="categories-list hidden">-->
-<!--            </div>-->
-<!--            <div class="products-list hidden">-->
-<!--            </div>-->
-<!--            <div class="product-details hidden">-->
-<!--            </div>-->
-
-<!--            <section id="my-orders" class="hidden">-->
-<!--                <h2>My orders:</h2>-->
-<!--                <ul id="order-list">-->
-<!--                </ul>-->
-<!--            </section>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--</div>-->
-
-<!--<script src="js/script.js"></script>-->
-<!--</body>-->
-<!--</html>-->
-
-
