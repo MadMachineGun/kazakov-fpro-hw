@@ -72,7 +72,6 @@ const productsData = [
         ],
     },
 ];
-
 document.addEventListener("DOMContentLoaded", function () {
     // Получаем ссылки на HTML-элементы, которые будут использоваться в скрипте.
     const categoriesButton = document.querySelector(".categories-button");
