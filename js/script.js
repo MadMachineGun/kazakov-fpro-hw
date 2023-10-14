@@ -1,119 +1,116 @@
-
-"use strict";
-
 "use strict";
 
 // Данные о продуктах.
 const productsData = [
     {
-        category: 'B.C. Rich',
+        category: "B.C. Rich",
         items: [
             {
-                name: 'B.C. Rich Bass',
+                name: "B.C. Rich Bass",
                 description: 'Electric Bass guitar - B.C. Rich "Bass"',
-                price: '$899.99',
-                image: 'img/B.C._Rich_Bass.png',
+                price: "$899.99",
+                image: "img/B.C._Rich_Bass.png",
             },
             {
-                name: 'B.C. Rich KKV',
+                name: "B.C. Rich KKV",
                 description: 'Electric guitar - B.C. Rich "KKV"',
-                price: '$799.99',
-                image: 'img/B.C._Rich_KKV.png',
+                price: "$799.99",
+                image: "img/B.C._Rich_KKV.png",
             },
             {
-                name: 'B.C. Rich Warlock',
+                name: "B.C. Rich Warlock",
                 description: 'Electric guitar - B.C. Rich "Warlock"',
-                price: '$999.99',
-                image: 'img/B.C._Rich_Warlock.png',
+                price: "$999.99",
+                image: "img/B.C._Rich_Warlock.png",
             },
         ],
     },
     {
-        category: 'Gibson',
+        category: "Gibson",
         items: [
             {
-                name: 'Gibson Explorer',
+                name: "Gibson Explorer",
                 description: 'Electric guitar - "Gibson Explorer"',
-                price: '$1249.99',
-                image: 'img/Gibson_Explorer.png',
+                price: "$1249.99",
+                image: "img/Gibson_Explorer.png",
             },
             {
-                name: 'Gibson Flying V',
+                name: "Gibson Flying V",
                 description: 'Electric guitar - "Gibson Flying V"',
-                price: '$1149.99',
-                image: 'img/Gibson_Flying_V.png',
+                price: "$1149.99",
+                image: "img/Gibson_Flying_V.png",
             },
             {
-                name: 'Gibson SG Special',
+                name: "Gibson SG Special",
                 description: 'Electric guitar - Gibson "SG Special"',
-                price: '$1099.99',
-                image: 'img/Gibson_SG_Special.png',
+                price: "$1099.99",
+                image: "img/Gibson_SG_Special.png",
             },
         ],
     },
     {
-        category: 'Jackson',
+        category: "Jackson",
         items: [
             {
-                name: 'Jackson DK2M',
+                name: "Jackson DK2M",
                 description: 'Electric guitar - Jackson "DK2M"',
-                price: '$799.99',
-                image: 'img/Jackson_DK2M.png',
+                price: "$799.99",
+                image: "img/Jackson_DK2M.png",
             },
             {
-                name: 'Jackson Kelly',
+                name: "Jackson Kelly",
                 description: 'Electric guitar - Jackson "Kelly"',
-                price: '$849.99',
-                image: 'img/Jackson_Kelly.png',
+                price: "$849.99",
+                image: "img/Jackson_Kelly.png",
             },
             {
-                name: 'Jackson Rhoads',
+                name: "Jackson Rhoads",
                 description: 'Electric guitar - Jackson "Rhoads"',
-                price: '$899.99',
-                image: 'img/Jackson_Rhoads.png',
+                price: "$899.99",
+                image: "img/Jackson_Rhoads.png",
             },
         ],
     },
 ];
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Получаем ссылки на HTML-элементы, которые будут использоваться в скрипте.
-    const categoriesButton = document.querySelector('.categories-button');
-    const categoriesList = document.querySelector('.categories-list');
-    const productsList = document.querySelector('.products-list');
-    const productDetails = document.querySelector('.product-details');
-    const startScreen = document.querySelector('.start-screen');
-    const myOrdersButton = document.getElementById('my-orders-button');
-    const myOrdersSection = document.getElementById('my-orders');
-    const orderList = document.getElementById('order-list');
-    const returnButton = document.getElementById('return-button');
-    const totalAmountDisplay = document.getElementById('total-amount');
+    const categoriesButton = document.querySelector(".categories-button");
+    const categoriesList = document.querySelector(".categories-list");
+    const productsList = document.querySelector(".products-list");
+    const productDetails = document.querySelector(".product-details");
+    const startScreen = document.querySelector(".start-screen");
+    const myOrdersButton = document.getElementById("my-orders-button");
+    const myOrdersSection = document.getElementById("my-orders");
+    const orderList = document.getElementById("order-list");
+    const returnButton = document.getElementById("return-button");
+    const totalAmountDisplay = document.getElementById("total-amount");
 
     // Функция для получения заказов из локального хранилища, либо возвращает пустой массив.
     function getOrders() {
-        return JSON.parse(localStorage.getItem('orders')) || [];
+        return JSON.parse(localStorage.getItem("orders")) || [];
     }
 
     // Функция для сохранения заказов в локальное хранилище.
     function saveOrders(orders) {
-        localStorage.setItem('orders', JSON.stringify(orders));
+        localStorage.setItem("orders", JSON.stringify(orders));
     }
 
     // Функция для отображения заказов в списке заказов.
     function displayOrders() {
-        orderList.innerHTML = '';
+        orderList.innerHTML = "";
 
         // Получаем список заказов из локального хранилища.
         const orders = getOrders();
 
         // Если список заказов пуст, выводим сообщение об этом.
         if (orders.length === 0) {
-            orderList.innerHTML = '<p>You have no orders yet.</p>';
+            orderList.innerHTML = "<p>You have no orders yet.</p>";
         } else {
             let totalAmount = 0;
             orders.forEach((order, index) => {
                 // Создаем элемент списка для каждого заказа.
-                const orderItem = document.createElement('li');
+                const orderItem = document.createElement("li");
                 orderItem.innerHTML = `
                     <p>Order #${index + 1}</p>
                     <p>Product: ${order.name}</p>
@@ -130,10 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Получаем ссылки на элементы для изменения количества и общей суммы заказа.
                 const quantityInput = orderItem.querySelector(`#quantity-${index}`);
-                const totalPriceDisplay = orderItem.querySelector('.total-price');
+                const totalPriceDisplay = orderItem.querySelector(".total-price");
 
                 // Обработчик события для изменения количества товара в заказе.
-                quantityInput.addEventListener('input', () => {
+                quantityInput.addEventListener("input", () => {
                     const newQuantity = parseInt(quantityInput.value);
                     if (newQuantity >= 1) {
                         order.quantity = newQuantity;
@@ -141,14 +138,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         saveOrders(orders);
                         updateTotalAmount();
                     } else {
-                        quantityInput.value = 1;
+                        quantityInput.value = order.quantity || 1;
                     }
                 });
 
+
                 // Обработчик события для удаления заказа.
-                const deleteOrderButton = orderItem.querySelector('.delete-order-button');
-                deleteOrderButton.addEventListener('click', () => {
-                    orders.splice(deleteOrderButton.getAttribute('data-index'), 1);
+                const deleteOrderButton = orderItem.querySelector(".delete-order-button");
+                deleteOrderButton.addEventListener("click", () => {
+                    orders.splice(deleteOrderButton.getAttribute("data-index"), 1);
                     saveOrders(orders);
                     displayOrders();
                     updateTotalAmount();
@@ -175,39 +173,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Функция для отображения категорий и товаров.
     function showCategories() {
-        categoriesList.innerHTML = '';
+        categoriesList.innerHTML = "";
 
         // Для каждой категории из productsData добавляем кнопку категории.
         productsData.forEach(category => {
-            const categoryButton = document.createElement('button');
+            const categoryButton = document.createElement("button");
             categoryButton.textContent = category.category;
-            categoryButton.addEventListener('click', () => {
+            categoryButton.addEventListener("click", () => {
                 showProducts(category);
             });
             categoriesList.appendChild(categoryButton);
         });
 
-        categoriesList.classList.remove('hidden');
-        startScreen.classList.add('hidden');
-        myOrdersButton.classList.remove('hidden');
+        categoriesList.classList.remove("hidden");
+        startScreen.classList.add("hidden");
+        myOrdersButton.classList.remove("hidden");
     }
 
     // Функция для отображения товаров определенной категории.
     function showProducts(category) {
-        productsList.innerHTML = '';
+        productsList.innerHTML = "";
 
         // Для каждого товара из выбранной категории добавляем информацию о товаре.
         category.items.forEach(item => {
-            const product = document.createElement('div');
-            product.classList.add('product');
+            const product = document.createElement("div");
+            product.classList.add("product");
             product.innerHTML = `
                 <h2>${item.name}</h2>
                 <p>${item.description}</p>
                 <p>Price: ${item.price}</p>
                 <img src="${item.image}" alt="${item.name}">
-                <button class="buy-button">Buy</button>
+                <button class="buy-button">Add to cart</button>
             `;
-            product.querySelector('.buy-button').addEventListener('click', () => {
+            product.querySelector(".buy-button").addEventListener("click", () => {
                 // Создаем копию товара и сохраняем ее в заказ.
                 const order = { ...item, date: new Date().toLocaleString() };
                 const orders = getOrders();
@@ -219,33 +217,32 @@ document.addEventListener('DOMContentLoaded', function () {
             productsList.appendChild(product);
         });
 
-        productsList.classList.remove('hidden');
-        categoriesList.classList.add('hidden');
+        productsList.classList.remove("hidden");
+        categoriesList.classList.add("hidden");
     }
 
     // Обработчик события для кнопки "Categories".
-    categoriesButton.addEventListener('click', showCategories);
+    categoriesButton.addEventListener("click", showCategories);
 
     // Обработчик события для кнопки "My Orders".
-    myOrdersButton.addEventListener('click', () => {
+    myOrdersButton.addEventListener("click", () => {
         displayOrders();
-        myOrdersSection.classList.remove('hidden');
-        categoriesList.classList.add('hidden');
-        productsList.classList.add('hidden');
-        startScreen.classList.add('hidden');
-        myOrdersButton.classList.add('hidden');
+        myOrdersSection.classList.remove("hidden");
+        categoriesList.classList.add("hidden");
+        productsList.classList.add("hidden");
+        startScreen.classList.add("hidden");
+        myOrdersButton.classList.add("hidden");
     });
 
     // Обработчик события для кнопки "Return" в разделе "My Orders".
-    returnButton.addEventListener('click', () => {
-        myOrdersSection.classList.add('hidden');
+    returnButton.addEventListener("click", () => {
+        myOrdersSection.classList.add("hidden");
         showCategories();
     });
 
     // При загрузке страницы отображаем список категорий.
     showCategories();
 });
-
 
 
 
@@ -584,4 +581,4 @@ document.addEventListener('DOMContentLoaded', function () {
 //         document.getElementById('registration-form').reset();
 //     });
 // });
-// //
+//

@@ -24,85 +24,82 @@
             <h1>Guitar Shop</h1>
             <button class="categories-button">Categories</button>
         </div>
+        <button type="button" id="my-orders-button">My Orders</button>
 
         <button type="button" id="return-button" class="hidden">&#8592</button>
         <div class="categories-list hidden">
         </div>
         <div class="products-list hidden">
 
-            <div class="product">
-                <h2>Product Name</h2>
-                <p>Product description</p>
-                <p>Price: $XX.XX</p>
-                <button class="buy-button">Buy</button>
+                </div>
             </div>
-        </div>
-        <div class="product-details hidden">
-        </div>
+            <div class="product-details hidden">
+            </div>
 
-        <section id="my-orders" class="hidden">
-            <h2>My orders:</h2>
-            <ul id="order-list">
-            </ul>
+            <section id="my-orders" class="hidden">
+                <h2>My orders:</h2>
+                <ul id="order-list">
+                </ul>
+                <button class="buy-button">Buy</button>
+           </section>
+
+</section>
+<div id="reg-form">
+    <section class="reg-form">
+        <form id="registration-form" autocomplete="off">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required><br>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="birthdate">Date of Birth (DD.MM.YYYY):</label>
+            <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>
+
+            <label>Gender:</label>
+            <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male
+            <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>
+
+            <label for="city">City:</label>
+            <select id="city" name="city">
+                <option value="">Select a city</option>
+                <option value="kyiv">Kyiv</option>
+                <option value="lviv">Lviv</option>
+                <option value="odessa">Odessa</option>
+                <option value="paris">Paris</option>
+                <option value="madrid">Madrid</option>
+                <option value="london">London</option>
+                <option value="berlin">Berlin</option>
+                <option value="rome">Rome</option>
+                <option value="lisbon">Lisbon</option>
+            </select><br>
+
+            <label>Languages:</label><br>
+            <label for="english"></label>
+            <input type="checkbox" id="english" name="languages" value="English">English<br>
+            <label for="spanish"></label>
+            <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>
+            <label for="french"></label>
+            <input type="checkbox" id="french" name="languages" value="French">French<br>
+            <label for="ukrainian"></label>
+            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>
+            <button type="button" id="save-button">Submit</button>
+        </form>
+
+        <section id="user-table" class="hidden">
+            <h2>Registration Data:</h2>
+            <table>
+            </table>
+            <button type="button" id="subscribe-button">Subscribe</button>
         </section>
-    </div>
-</section>
-
-<section class="reg-form">
-    <form id="registration-form" autocomplete="off">
-        <label for="first-name">First Name:</label>
-        <input type="text" id="first-name" name="first-name" required><br>
-
-        <label for="last-name">Last Name:</label>
-        <input type="text" id="last-name" name="last-name" required><br>
-
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-
-        <label for="birthdate">Date of Birth (DD.MM.YYYY):</label>
-        <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>
-
-        <label>Gender:</label>
-        <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male
-        <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>
-
-        <label for="city">City:</label>
-        <select id="city" name="city">
-            <option value="">Select a city</option>
-            <option value="kyiv">Kyiv</option>
-            <option value="lviv">Lviv</option>
-            <option value="odessa">Odessa</option>
-            <option value="paris">Paris</option>
-            <option value="madrid">Madrid</option>
-            <option value="london">London</option>
-            <option value="berlin">Berlin</option>
-            <option value="rome">Rome</option>
-            <option value="lisbon">Lisbon</option>
-        </select><br>
-
-        <label>Languages:</label><br>
-        <label for="english"></label>
-        <input type="checkbox" id="english" name="languages" value="English">English<br>
-        <label for="spanish"></label>
-        <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>
-        <label for="french"></label>
-        <input type="checkbox" id="french" name="languages" value="French">French<br>
-        <label for="ukrainian"></label>
-        <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>
-        <button type="button" id="save-button">Submit</button>
-    </form>
-
-    <section id="user-table" class="hidden">
-        <h2>Registration Data:</h2>
-        <table>
-        </table>
-        <button type="button" id="subscribe-button">Subscribe</button>
     </section>
-</section>
-
+</div>
 <section class="cart hidden">
     <h1>Shopping Cart</h1>
 
@@ -145,15 +142,15 @@
     </div>
 
     <div class="order-details hidden">
-    <h2>Order Details</h2>
-    <p>Product Name: <span id="product-name"></span></p>
-    <p>Price: $<span id="product-price"></span></p>
-    <p>Full Name: <span id="order-name"></span></p>
-    <p>City: <span id="order-city"></span></p>
-    <p>Shipping Location (Nova Poshta): <span id="order-shipping-location"></span></p>
-    <p>Payment Method: <span id="order-payment-method"></span></p>
-    <p>Quantity: <span id="order-quantity"></span></p>
-    <p>Comments: <span id="order-comments"></span></p>
+        <h2>Order Details</h2>
+        <p>Product Name: <span id="product-name"></span></p>
+        <p>Price: $<span id="product-price"></span></p>
+        <p>Full Name: <span id="order-name"></span></p>
+        <p>City: <span id="order-city"></span></p>
+        <p>Shipping Location (Nova Poshta): <span id="order-shipping-location"></span></p>
+        <p>Payment Method: <span id="order-payment-method"></span></p>
+        <p>Quantity: <span id="order-quantity"></span></p>
+        <p>Comments: <span id="order-comments"></span></p>
     </div>
 
     <div class="error-message hidden">
