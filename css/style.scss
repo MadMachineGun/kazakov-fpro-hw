@@ -14,11 +14,14 @@ body {
   background-color: #f2f2f2;
 }
 
-header, .shop, .reg-form, .cart, footer {
+header, .shop, #my-orders, .reg-form, .cart, footer {
   background-color: $main-color;
-  color: white;
+  color: antiquewhite;
   padding: 20px;
   text-align: center;
+}
+.shop{
+  color: #484a4b;
 }
 
 #reg-form {
@@ -203,9 +206,8 @@ button {
   justify-content: space-between;
   }
 
-.product {
+.product-item {
   width: calc(33.33% - 20px);
-
   margin: 10px;
   height: 300px;
   border: 1px solid #ccc;
@@ -213,8 +215,13 @@ button {
   flex-direction: column;
 }
 
-.product img {
+.product-image {
   max-width: 100%;
   max-height: 60%;
   object-fit: contain;
   flex-grow: 1;}
+
+.start-screen > h1:nth-child(1){
+  color: antiquewhite;
+  margin-bottom: 15px;
+}
