@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const returnButton = document.getElementById('return-button');
     const totalAmountDisplay = document.getElementById('total-amount');
 
+
     // Добавляем кнопку для корзины покупок.
     const cartButton = document.querySelector('.cart-button');
     const cartSection = document.querySelector('.cart');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cartButton.addEventListener('click', () => {
         cartSection.classList.remove('hidden');
     });
+
 
     // Функция для получения заказов из локального хранилища, либо возвращает пустой массив.
     function getOrders() {
