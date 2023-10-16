@@ -15,7 +15,7 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
 
 .shop {
   color: #484a4b;
-  margin-bottom: 2px; }
+  margin-bottom: 1px; }
 
 #reg-form {
   display: flex;
@@ -30,7 +30,7 @@ header {
   display: flex;
   justify-content: space-around;
   background-color: #484a4b !important;
-  margin: 2px auto; }
+  margin: 1px auto; }
 
 .header-left {
   display: flex;

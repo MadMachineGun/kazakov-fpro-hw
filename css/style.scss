@@ -12,7 +12,7 @@ $metallic-color-end: #ff9900;
 
 body {
   background-color: #f2f2f2;
-}
+ }
 
 header, .shop, #my-orders, .reg-form, .cart, footer {
   background-color: $main-color;
@@ -22,7 +22,7 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
 }
 .shop{
   color: #484a4b;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 #reg-form {
@@ -40,7 +40,7 @@ header {
   display: flex;
   justify-content: space-around;
   background-color: #484a4b !important;
-  margin: 2px auto;
+  margin: 1px auto;
 }
 
   .header-left {
