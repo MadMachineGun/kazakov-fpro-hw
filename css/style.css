@@ -85,7 +85,7 @@ button {
     background-color: #ff9d94;
     transform: scale(0.95); }
 
-.categories-button, .buy-button, .show-details-button, .subscribe-button {
+.categories-button, .buy-button, .cart-button, .show-details-button, .subscribe-button {
   font-size: 18px;
   padding: 10px 20px;
   margin-top: 0;
@@ -95,7 +95,7 @@ button {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s; }
-  .categories-button:hover, .buy-button:hover, .show-details-button:hover, .subscribe-button:hover {
+  .categories-button:hover, .buy-button:hover, .cart-button:hover, .show-details-button:hover, .subscribe-button:hover {
     background-color: #45a049; }
 
 .product-item {

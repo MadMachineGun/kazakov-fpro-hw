@@ -16,6 +16,7 @@
         <a href="https://www.instagram.com"><img src="/img/instagram-icon.png" alt="Instagram"></a>
     </div>
     <h1>Metal Forever!</h1>
+    <img class="cart-button" src="/img/cart.png" alt="Cart">
 </header>
 
 <section class="shop">
@@ -25,25 +26,75 @@
             <button class="categories-button">Categories</button>
         </div>
         <button type="button" id="my-orders-button">My Orders</button>
-
         <button type="button" id="return-button" class="hidden">&#8592</button>
         <div class="categories-list hidden">
         </div>
         <div class="products-list hidden">
+        </div>
+    </div>
+    <div class="product-details hidden">
+    </div>
 
-                </div>
-            </div>
-            <div class="product-details hidden">
-            </div>
-
-            <section id="my-orders" class="hidden">
-                <h2>My orders:</h2>
-                <ul id="order-list">
-                </ul>
-                <button class="buy-button">Buy</button>
-           </section>
-
+    <section id="my-orders" class="hidden">
+        <h2>My orders:</h2>
+        <ul id="order-list">
+        </ul>
+    </section>
 </section>
+
+<div id="cart">
+    <section class="cart">
+        <h1>Shopping Cart</h1>
+        <div class="order-form hidden">
+            <h2>Order Form</h2>
+            <form id="order-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required><br>
+
+                <label for="destination">City:</label>
+                <select id="destination" required>
+                    <option value="">Select a city</option>
+                    <option value="city1">City 1</option>
+                    <option value="city2">City 2</option>
+                    <option value="city3">City 3</option>
+                </select><br>
+
+                <label for="shipping-location">Shipping Location (Nova Poshta):</label>
+                <input type="text" id="shipping-location" required><br>
+
+                <label for="cash-on-delivery">Cash on Delivery</label>
+                <input type="radio" id="cash-on-delivery" name="payment-method" value="cash" required>
+                <label for="credit-card">Credit Card</label>
+                <input type="radio" id="credit-card" name="payment-method" value="credit-card" required><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" required><br>
+
+                <label for="comments">Comments:</label>
+                <textarea id="comments"></textarea><br>
+
+                <button type="button" id="submit-button">Submit Order</button>
+            </form>
+        </div>
+
+        <div class="order-details hidden">
+            <h2>Order Details</h2>
+            <p>Product Name: <span id="product-name"></span></p>
+            <p>Price: $<span id="product-price"></span></p>
+            <p>Full Name: <span id="order-name"></span></p>
+            <p>City: <span id="order-city"></span></p>
+            <p>Shipping Location (Nova Poshta): <span id="order-shipping-location"></span></p>
+            <p>Payment Method: <span id="order-payment-method"></span></p>
+            <p>Quantity: <span id="order-quantity"></span></p>
+            <p>Comments: <span id="order-comments"></span></p>
+        </div>
+
+        <div class="error-message hidden">
+            <p>Please fill in all required fields before submitting the order.</p>
+        </div>
+    </section>
+</div>
+
 <div id="reg-form">
     <section class="reg-form">
         <form id="registration-form" autocomplete="off">
@@ -100,63 +151,6 @@
         </section>
     </section>
 </div>
-<section class="cart hidden">
-    <h1>Shopping Cart</h1>
-
-    <div class="product">
-        <h2>Product Name</h2>
-        <p>Product description</p>
-        <p>Price: $XX.XX</p>
-        <button id="buy-button">Buy</button>
-    </div>
-
-    <div class="order-form hidden">
-        <h2>Order Form</h2>
-        <form id="order-form">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" required><br>
-
-            <label for="destination">City:</label>
-            <select id="destination" required>
-                <option value="city1">City 1</option>
-                <option value="city2">City 2</option>
-                <option value="city3">City 3</option>
-            </select><br>
-
-            <label for="shipping-location">Shipping Location (Nova Poshta):</label>
-            <input type="text" id="shipping-location" required><br>
-
-            <label for="cash-on-delivery">Cash on Delivery</label>
-            <input type="radio" id="cash-on-delivery" name="payment-method" value="cash" required>
-            <label for="credit-card">Credit Card</label>
-            <input type="radio" id="credit-card" name="payment-method" value="credit-card" required><br>
-
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" required><br>
-
-            <label for="comments">Comments:</label>
-            <textarea id="comments"></textarea><br>
-
-            <button type="button" id="submit-button">Submit Order</button>
-        </form>
-    </div>
-
-    <div class="order-details hidden">
-        <h2>Order Details</h2>
-        <p>Product Name: <span id="product-name"></span></p>
-        <p>Price: $<span id="product-price"></span></p>
-        <p>Full Name: <span id="order-name"></span></p>
-        <p>City: <span id="order-city"></span></p>
-        <p>Shipping Location (Nova Poshta): <span id="order-shipping-location"></span></p>
-        <p>Payment Method: <span id="order-payment-method"></span></p>
-        <p>Quantity: <span id="order-quantity"></span></p>
-        <p>Comments: <span id="order-comments"></span></p>
-    </div>
-
-    <div class="error-message hidden">
-        <p>Please fill in all required fields before submitting the order.</p>
-    </div>
-</section>
 
 <footer>
     <div class="contact-info">
@@ -169,3 +163,5 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+
+
