@@ -14,7 +14,8 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
   text-align: center; }
 
 .shop {
-  color: #484a4b; }
+  color: #484a4b;
+  margin-bottom: 2px; }
 
 #reg-form {
   display: flex;
@@ -22,12 +23,14 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
   background-color: #484a4b; }
 
 .reg-form {
-  max-width: 400px; }
+  max-width: 400px;
+  margin: 10px auto; }
 
 header {
   display: flex;
   justify-content: space-around;
-  background-color: #484a4b !important; }
+  background-color: #484a4b !important;
+  margin: 2px auto; }
 
 .header-left {
   display: flex;

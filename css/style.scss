@@ -22,6 +22,7 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
 }
 .shop{
   color: #484a4b;
+  margin-bottom: 2px;
 }
 
 #reg-form {
@@ -32,12 +33,14 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
 
 .reg-form {
   max-width: 400px;
-}
+  margin: 10px auto;
+  }
 
 header {
   display: flex;
   justify-content: space-around;
   background-color: #484a4b !important;
+  margin: 2px auto;
 }
 
   .header-left {
