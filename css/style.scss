@@ -281,3 +281,12 @@ button {
   height: 100vh;
   gap: 20px;
 }
+
+#order-form{
+  display: grid;
+  max-width: 400px;
+  margin: 10px auto;
+}
+#shipping-location, #name{
+  width: 400px;
+}
