@@ -18,7 +18,10 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
 
 .shop {
   color: #484a4b;
-  margin-bottom: 1px; }
+  margin-bottom: 1px;
+  background-image: url("img/mainback.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 #reg-form {
   display: flex;
