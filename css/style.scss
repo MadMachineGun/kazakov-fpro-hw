@@ -12,7 +12,11 @@ $metallic-color-end: #ff9900;
 
 body {
   background-color: #f2f2f2;
- }
+}
+
+.container {
+  max-width: 1200px;
+}
 
 header, .shop, #my-orders, .reg-form, .cart, footer {
   background-color: $main-color;
@@ -20,7 +24,8 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
   padding: 20px;
   text-align: center;
 }
-.shop{
+
+.shop {
   color: #484a4b;
   margin-bottom: 1px;
 }
@@ -29,12 +34,12 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
   display: flex;
   justify-content: center;
   background-color: #484a4b;
- }
+}
 
 .reg-form {
   max-width: 400px;
   margin: 10px auto;
-  }
+}
 
 header {
   display: flex;
@@ -43,22 +48,22 @@ header {
   margin: 1px auto;
 }
 
-  .header-left {
-    display: flex;
-    padding-top: 10px;
+.header-left {
+  display: flex;
+  padding-top: 10px;
 
-    a {
-      margin-right: 10px;
+  a {
+    margin-right: 10px;
 
-      img {
-        max-width: 30px;
-      }
+    img {
+      max-width: 30px;
     }
   }
+}
 
-  h1 {
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+}
 
 
 a {
@@ -203,18 +208,18 @@ button {
   display: none;
 }
 
-.products-list{
+.products-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  }
+}
 
 .product-item {
   width: calc(33.33% - 20px);
   margin: 10px;
   height: 300px;
   border: 1px solid #ccc;
-  display: flex;
+  //display: flex;
   flex-direction: column;
 }
 
@@ -222,25 +227,26 @@ button {
   max-width: 100%;
   max-height: 60%;
   object-fit: contain;
-  flex-grow: 1;}
+  flex-grow: 1;
+}
 
-.start-screen > h1:nth-child(1){
+.start-screen > h1:nth-child(1) {
   color: antiquewhite;
   margin-bottom: 15px;
 }
 
- .cart-modal {
-   display: none;
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.7);
-   z-index: 9999;
-   align-items: center;
-   justify-content: center;
- }
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
 
 .cart-content {
   background-color: #fff;
@@ -255,3 +261,23 @@ button {
   cursor: pointer;
 }
 
+#order-list .product-image {
+  width: 100px;
+  height: auto;
+}
+
+#order-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#order-list li {
+  flex: 1;
+  margin: 10px;
+  width: 200px;
+}
+#my-orders {
+  height: 100vh;
+  gap: 20px;
+}

@@ -7,6 +7,9 @@
 body {
   background-color: #f2f2f2; }
 
+.container {
+  max-width: 1200px; }
+
 header, .shop, #my-orders, .reg-form, .cart, footer {
   background-color: #6c7d88;
   color: antiquewhite;
@@ -175,7 +178,6 @@ button {
   margin: 10px;
   height: 300px;
   border: 1px solid #ccc;
-  display: flex;
   flex-direction: column; }
 
 .product-image {
@@ -210,5 +212,23 @@ button {
   top: 10px;
   right: 10px;
   cursor: pointer; }
+
+#order-list .product-image {
+  width: 100px;
+  height: auto; }
+
+#order-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none; }
+
+#order-list li {
+  flex: 1;
+  margin: 10px;
+  width: 200px; }
+
+#my-orders {
+  height: 100vh;
+  gap: 20px; }
 
 /*# sourceMappingURL=style.css.map */
