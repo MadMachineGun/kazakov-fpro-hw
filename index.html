@@ -17,7 +17,6 @@
     </div>
     <h1>Metal Forever!</h1>
     <img class="cart-button" src="/img/cart.png" alt="Cart">
-
 </header>
 
 <section class="shop">
@@ -41,7 +40,7 @@
     </section>
 </section>
 
-<div id="cart">
+<div id="cart" class="hidden">
     <section class="cart">
         <div class="order-form hidden">
             <h2>Order Form</h2>
@@ -115,8 +114,10 @@
             <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>
 
             <label>Gender:</label>
-            <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male
-            <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>
+            <label for="male"></label>
+            <input type="radio" id="male" name="gender" value="male">Male
+            <label for="female"></label>
+            <input type="radio" id="female" name="gender" value="female">Female<br>
 
             <label for="city"></label>
             <select id="city" name="city">
@@ -161,5 +162,181 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">-->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--    <title>Metal Forever! Online Store</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <div class="header-left">-->
+<!--        <a href="https://www.facebook.com"><img src="/img/facebook-icon.png" alt="Facebook"></a>-->
+<!--        <a href="https://www.twitter.com"><img src="/img/twitter-icon.png" alt="Twitter"></a>-->
+<!--        <a href="https://www.instagram.com"><img src="/img/instagram-icon.png" alt="Instagram"></a>-->
+<!--    </div>-->
+<!--    <h1>Metal Forever!</h1>-->
+<!--    <img class="cart-button" src="/img/cart.png" alt="Cart">-->
+<!--</header>-->
+
+<!--<section class="shop">-->
+<!--    <div class="start-screen">-->
+<!--        <h1>Guitar Shop</h1>-->
+<!--        <button class="categories-button">Categories</button>-->
+<!--    </div>-->
+<!--    <button type="button" id="my-orders-button">My Orders</button>-->
+<!--    <button type="button" id="return-button" class="hidden">&#8592</button>-->
+<!--    <div class="categories-list hidden">-->
+<!--    </div>-->
+<!--    <div class="products-list hidden">-->
+<!--    </div>-->
+<!--    <div class="product-details hidden">-->
+<!--    </div>-->
+
+<!--    <section id="my-orders" class="hidden">-->
+<!--        <h2>My orders:</h2>-->
+<!--        <ul id="order-list">-->
+<!--        </ul>-->
+<!--    </section>-->
+<!--</section>-->
+
+<!--<div id="cart">-->
+<!--    <section class="cart">-->
+<!--        <div class="order-form hidden">-->
+<!--            <h2>Order Form</h2>-->
+<!--            <form id="order-form">-->
+<!--                <label for="name">Full Name:</label>-->
+<!--                <input type="text" id="name" required><br>-->
+
+<!--                <label for="destination">City:</label>-->
+<!--                <select id="destination" required>-->
+<!--                    <option value="">Select a city</option>-->
+<!--                    <option value="city1">Kyiv</option>-->
+<!--                    <option value="city2">Lviv</option>-->
+<!--                    <option value="city3">Odessa</option>-->
+<!--                    <option value="city4">Kharkiv</option>-->
+<!--                    <option value="city5">Zhytomyr</option>-->
+<!--                    <option value="city6">Mykolaiv</option>-->
+<!--                </select><br>-->
+
+<!--                <label for="shipping-location">Shipping Location (Nova Poshta):</label>-->
+<!--                <input type="text" id="shipping-location" required><br>-->
+
+<!--                <label for="cash-on-delivery">Cash on Delivery</label>-->
+<!--                <input type="radio" id="cash-on-delivery" name="payment-method" value="cash" required>-->
+<!--                <label for="credit-card">Credit Card</label>-->
+<!--                <input type="radio" id="credit-card" name="payment-method" value="credit-card" required><br>-->
+
+<!--                <label for="quantity">Quantity:</label>-->
+<!--                <input type="number" id="quantity" required><br>-->
+
+<!--                <label for="comments">Comments:</label>-->
+<!--                <textarea id="comments"></textarea><br>-->
+
+<!--                <button type="button" id="submit-button">Submit Order</button>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        <div class="order-details hidden">-->
+<!--            <h2>Order Details</h2>-->
+<!--            <p>Product Name: <span id="product-name"></span></p>-->
+<!--            <p>Price: $<span id="product-price"></span></p>-->
+<!--            <p>Full Name: <span id="order-name"></span></p>-->
+<!--            <p>City: <span id="order-city"></span></p>-->
+<!--            <p>Shipping Location (Nova Poshta): <span id="order-shipping-location"></span></p>-->
+<!--            <p>Payment Method: <span id="order-payment-method"></span></p>-->
+<!--            <p>Quantity: <span id="order-quantity"></span></p>-->
+<!--            <p>Comments: <span id="order-comments"></span></p>-->
+<!--        </div>-->
+
+<!--        <div class="error-message hidden">-->
+<!--            <p>Please fill in all required fields before submitting the order.</p>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</div>-->
+
+<!--<div id="reg-form">-->
+<!--    <section class="reg-form">-->
+<!--        <form id="registration-form" autocomplete="off">-->
+<!--            <label for="first-name">First Name:</label>-->
+<!--            <input type="text" id="first-name" name="first-name" required><br>-->
+
+<!--            <label for="last-name">Last Name:</label>-->
+<!--            <input type="text" id="last-name" name="last-name" required><br>-->
+
+<!--            <label for="address">Address:</label>-->
+<!--            <input type="text" id="address" name="address" required><br>-->
+
+<!--            <label for="email">Email:</label>-->
+<!--            <input type="email" id="email" name="email" required><br>-->
+
+<!--            <label for="birthdate">Date of Birth (DD.MM.YYYY):</label>-->
+<!--            <input type="text" id="birthdate" name="birthdate" pattern="\d{2}\.\d{2}\.\d{4}" required><br>-->
+
+<!--            <label>Gender:</label>-->
+<!--            <label for="male"></label><input type="radio" id="male" name="gender" value="male">Male-->
+<!--            <label for="female"></label><input type="radio" id="female" name="gender" value="female">Female<br>-->
+
+<!--            <label for="city"></label>-->
+<!--            <select id="city" name="city">-->
+<!--                <option value="">Select a city</option>-->
+<!--                <option value="kyiv">Kyiv</option>-->
+<!--                <option value="lviv">Lviv</option>-->
+<!--                <option value="odessa">Odessa</option>-->
+<!--                <option value="madrid">Kharkiv</option>-->
+<!--                <option value="london">Zhytomyr</option>-->
+<!--                <option value="berlin">Mykolaiv</option>-->
+<!--            </select><br>-->
+
+<!--            <label>Languages:</label><br>-->
+<!--            <label for="english"></label>-->
+<!--            <input type="checkbox" id="english" name="languages" value="English">English<br>-->
+<!--            <label for="spanish"></label>-->
+<!--            <input type="checkbox" id="spanish" name="languages" value="Spanish">Spanish<br>-->
+<!--            <label for="french"></label>-->
+<!--            <input type="checkbox" id="french" name="languages" value="French">French<br>-->
+<!--            <label for="ukrainian"></label>-->
+<!--            <input type="checkbox" id="ukrainian" name="languages" value="Ukrainian">Ukrainian<br>-->
+<!--            <button type="button" id="save-button">Submit</button>-->
+<!--        </form>-->
+
+<!--        <section id="user-table" class="hidden">-->
+<!--            <h2>Registration Data:</h2>-->
+<!--            <table>-->
+<!--            </table>-->
+<!--            <button type="button" id="subscribe-button">Subscribe</button>-->
+<!--        </section>-->
+<!--    </section>-->
+<!--</div>-->
+
+<!--<footer>-->
+<!--    <div class="contact-info">-->
+<!--        <p>Email: metalforever@google.com</p>-->
+<!--        <p>Phone: +3066-000-0000</p>-->
+<!--        <p>Address: 123 Rock Street, Metalville</p>-->
+<!--    </div>-->
+<!--</footer>-->
+
+<!--<script src="js/script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
 
 
