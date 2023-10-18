@@ -254,7 +254,7 @@ body > header:nth-child(1) > h1:nth-child(2) {
   margin-left: -30px; }
 
 #name, #quantity, #comments, #first-name, #destination,
-#last-name, #address, #email, #birthdate,
+#last-name, #address, #email, #birthdate, #city,
 #shipping-location {
   background-color: #e9edf8; }
 
