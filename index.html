@@ -1,13 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hamburger Builder</title>
 </head>
 <body>
+<div class="container">
+    <h1>Hamburger Builder</h1>
 
+    <div class="hamburger-options">
+        <div class="option size-group">
+            <h3>Size</h3>
+            <label for="small">Small:</label>
+            <button class="counter-button minus" data-target="small">-</button>
+            <input id="small" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="small">+</button>
+            <label for="large">Large:</label>
+            <button class="counter-button minus" data-target="large">-</button>
+            <input id="large" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="large">+</button>
+        </div>
+
+        <div class="option stuffing-group">
+            <h3>Stuffing</h3>
+            <label for="cheese">Cheese:</label>
+            <button class="counter-button minus" data-target="cheese">-</button>
+            <input id="cheese" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="cheese">+</button>
+            <label for="salad">Salad:</label>
+            <button class="counter-button minus" data-target="salad">-</button>
+            <input id="salad" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="salad">+</button>
+            <label for="potato">Potato:</label>
+            <button class="counter-button minus" data-target="potato">-</button>
+            <input id="potato" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="potato">+</button>
+        </div>
+
+        <div class="option toppings-group">
+            <h3>Toppings</h3>
+            <label for="mayo">Mayo:</label>
+            <button class="counter-button minus" data-target="mayo">-</button>
+            <input id="mayo" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="mayo">+</button>
+            <label for="spice">Spice:</label>
+            <button class="counter-button minus" data-target="spice">-</button>
+            <input id="spice" type="text" value="0" readonly>
+            <button class="counter-button plus" data-target="spice">+</button>
+        </div>
+    </div>
+
+    <div class="result">
+        <button id="clear" class="clear-button">Clear</button>
+        <p>Calories: <span id="calories">0</span></p>
+        <p>Price: <span id="price">0</span></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
