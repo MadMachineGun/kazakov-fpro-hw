@@ -142,9 +142,11 @@ button {
     background-color: #45a049;
   }
 }
-.cart-button{
+
+.cart-button {
   margin-right: 10px;
 }
+
 .product-item {
   display: inline-block;
   border: 1px solid #ccc;
@@ -303,12 +305,12 @@ button {
   text-align: initial;
 }
 
-body > header:nth-child(1) > h1:nth-child(2){
-margin-left: -30px;
+body > header:nth-child(1) > h1:nth-child(2) {
+  margin-left: -30px;
 }
 
 #name, #quantity, #comments, #first-name,
 #last-name, #address, #email, #birthdate,
-#city, #shipping-location{
-background-color: #e9edf8;
+#city, #shipping-location {
+  background-color: #e9edf8;
 }
