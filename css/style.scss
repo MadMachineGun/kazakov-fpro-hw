@@ -12,25 +12,25 @@ $metallic-color-end: #ff9900;
 
 body {
   background-color: #f2f2f2;
+  display: grid;
+  place-items: center;
 }
 
-.container {
-  max-width: 1200px;
-}
-
-header, .shop, #my-orders, .reg-form, .cart, footer {
+header, .shop, #my-orders, .reg-form, #reg-form, .cart, footer {
   background-color: $main-color;
   color: antiquewhite;
   padding: 20px;
   text-align: center;
+  width: 1280px;
 }
 
 .shop {
   color: #484a4b;
-  margin-bottom: 1px;
-  background-image: url('img/mainback.jpg');
+  background-image: url('/img/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 20px;
+  text-align: center;
 }
 
 #reg-form {
@@ -46,9 +46,9 @@ header, .shop, #my-orders, .reg-form, .cart, footer {
 
 header {
   display: flex;
-  justify-content: space-around;
-  background-color: #484a4b !important;
-  margin: 1px auto;
+  justify-content: space-between;
+  background-color: #484a4b;
+  margin-bottom: 1px;
 }
 
 .header-left {
@@ -142,7 +142,9 @@ button {
     background-color: #45a049;
   }
 }
-
+.cart-button{
+  margin-right: 10px;
+}
 .product-item {
   display: inline-block;
   border: 1px solid #ccc;
@@ -280,16 +282,33 @@ button {
   margin: 10px;
   width: 200px;
 }
+
 #my-orders {
   height: 100vh;
   gap: 20px;
+  max-width: 1235px;
 }
 
-#order-form{
+#order-form {
   display: grid;
   max-width: 400px;
   margin: 10px auto;
 }
-#shipping-location, #name{
+
+#shipping-location, #name {
   width: 400px;
+}
+
+#user-table > table:nth-child(2) {
+  text-align: initial;
+}
+
+body > header:nth-child(1) > h1:nth-child(2){
+margin-left: -30px;
+}
+
+#name, #quantity, #comments, #first-name,
+#last-name, #address, #email, #birthdate,
+#city, #shipping-location{
+background-color: #e9edf8;
 }
