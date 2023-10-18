@@ -78,7 +78,7 @@ h1 {
     transform: scale(1.1); }
 
 button, .cart-button {
-  background-image: url("/img/form-back.jpg");
+  background-image: url("/img/button-back.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
@@ -258,10 +258,10 @@ button, .cart-button {
 #name, #quantity, #comments, #first-name, #destination,
 #last-name, #address, #email, #birthdate, #city,
 #shipping-location {
-  background-image: url("/img/form-back.jpg");
+  background-image: url("/img/form.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   font-weight: bolder;
-  color: white; }
+  color: black; }
 
 /*# sourceMappingURL=style.css.map */
