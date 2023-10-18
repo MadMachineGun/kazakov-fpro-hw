@@ -78,7 +78,7 @@ h1 {
     transform: scale(1.1); }
 
 button, .cart-button {
-  background-image: url("/img/button-back.jpg");
+  background-image: url("/img/form-back.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
