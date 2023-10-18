@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const cartButton = document.querySelector('.cart-button');
     const cartSection = document.querySelector('.cart');
-    const buyButton = document.querySelector('#buy-button');
+    // const buyButton = document.querySelector('#buy-button');
     const orderForm = document.querySelector('.order-form');
     const orderDetails = document.querySelector('.order-details');
     const errorMessage = document.querySelector('.error-message');
@@ -256,10 +256,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('registration-form').reset();
     });
 
-    buyButton.addEventListener('click', () => {
-        cartSection.classList.add('hidden');
-        orderForm.classList.remove('hidden');
-    });
+    // buyButton.addEventListener('click', () => {
+    //     cartSection.classList.add('hidden');
+    //     orderForm.classList.remove('hidden');
+    // });
 
     document.getElementById('submit-button').addEventListener('click', () => {
         const orderName = document.getElementById('name').value;
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         document.getElementById('product-name').textContent = orderName;
-        document.getElementById('product-price').textContent = orderPrice; // Добавьте логику для получения цены продукта
+        document.getElementById('product-price').textContent = orderPrice;
         document.getElementById('order-name').textContent = orderName;
         document.getElementById('order-city').textContent = orderCity;
         document.getElementById('order-shipping-location').textContent = orderShippingLocation;
