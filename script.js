@@ -39,7 +39,16 @@ class Hamburger {
     }
 
     calculatePrice() {
-        const basePrice = (this.size.small.price + this.stuffings.cheese.price) * (this.quantity.small + this.quantity.cheese);
+        let basePrice = 0;
+
+        // Calculate price for size and stuffing
+        for (const key of Object.keys(this.size)) {
+            basePrice += this.size[key].price * this.quantity[key];
+        }
+        for (const key of Object.keys(this.stuffings)) {
+            basePrice += this.stuffings[key].price * this.quantity[key];
+        }
+
         const toppingsPrice = Object.keys(this.toppings).reduce((total, topping) => {
             return total + this.toppings[topping].price * this.quantity[topping];
         }, 0);
@@ -47,7 +56,16 @@ class Hamburger {
     }
 
     calculateCalories() {
-        const baseCalories = (this.size.small.calories + this.stuffings.cheese.calories) * (this.quantity.small + this.quantity.cheese);
+        let baseCalories = 0;
+
+        // Calculate calories for size and stuffing
+        for (const key of Object.keys(this.size)) {
+            baseCalories += this.size[key].calories * this.quantity[key];
+        }
+        for (const key of Object.keys(this.stuffings)) {
+            baseCalories += this.stuffings[key].calories * this.quantity[key];
+        }
+
         const toppingsCalories = Object.keys(this.toppings).reduce((total, topping) => {
             return total + this.toppings[topping].calories * this.quantity[topping];
         }, 0);
@@ -66,7 +84,7 @@ clearButton.addEventListener('click', () => {
     updateResult();
 });
 
-// Обработчики событий для кнопок розміру
+// Обработчики событий для кнопок размера и начинки
 const sizeButtons = document.querySelectorAll('.counter-button[data-target]');
 sizeButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -78,17 +96,13 @@ sizeButtons.forEach((button) => {
     });
 });
 
-
-
-
-
 const caloriesElement = document.getElementById('calories');
 const priceElement = document.getElementById('price');
 
 function updateResult() {
-    const quantity = hamburger.quantity;
-    const calories = hamburger.calculateCalories() * (quantity.small + quantity.cheese);
-    const price = hamburger.calculatePrice() * (quantity.small + quantity.cheese);
+    // const quantity = hamburger.quantity;
+    const calories = hamburger.calculateCalories();
+    const price = hamburger.calculatePrice();
     caloriesElement.textContent = calories;
     priceElement.textContent = price;
 }

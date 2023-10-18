@@ -1,9 +1,11 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
 
 body {
   font-family: Arial, sans-serif;
+  font-size: 20px;
   background-color: #ecf0f1;
   margin: 0;
   padding: 0;
@@ -12,8 +14,8 @@ body {
   background-repeat: no-repeat; }
 
 .container {
-  max-width: 1280px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: #fff;
   border-radius: 5px;
@@ -43,11 +45,12 @@ button {
   background-color: #3498db;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 3px;
+  padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin: 5px; }
+  margin: 5px;
+  width: 55px; }
 
 button:hover {
   background-color: #e74c3c; }
@@ -56,22 +59,22 @@ button:hover {
   text-align: center;
   margin-top: 20px; }
 
-.size-group {
+.size-group, .stuffing-group, .toppings-group {
   border: 2px solid #3498db;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; }
 
 .stuffing-group {
-  border: 2px solid #e74c3c;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px; }
+  border: 2px solid #e74c3c; }
 
 .toppings-group {
-  border: 2px solid #27ae60;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px; }
+  border: 2px solid #27ae60; }
+
+#small, #large, #cheese, #salad, #potato, #spice, #mayo {
+  width: 35px;
+  font-size: 20px; }
 
 /*# sourceMappingURL=styles.css.map */

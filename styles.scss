@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 $primary-color: #3498db;
@@ -8,6 +9,7 @@ $secondary-color: #e74c3c;
 
 body {
   font-family: Arial, sans-serif;
+  font-size: 20px;
   background-color: #ecf0f1;
   margin: 0;
   padding: 0;
@@ -17,8 +19,8 @@ body {
 }
 
 .container {
-  max-width: 1280px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: #fff;
   border-radius: 5px;
@@ -53,11 +55,12 @@ button {
   background-color: $primary-color;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 3px;
+  padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
   margin: 5px;
+  width: 55px;
 }
 
 button:hover {
@@ -69,23 +72,23 @@ button:hover {
   margin-top: 20px;
 }
 
-.size-group {
+.size-group, .stuffing-group, .toppings-group {
   border: 2px solid $primary-color;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .stuffing-group {
   border: 2px solid $secondary-color;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .toppings-group {
   border: 2px solid #27ae60;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+}
+#small, #large, #cheese, #salad, #potato, #spice, #mayo{
+  width: 35px;
+  font-size: 20px;
 }
