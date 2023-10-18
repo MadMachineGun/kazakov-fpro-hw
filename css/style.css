@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif, 20px; }
 
 body {
-  background-color: #f2f2f2;
   display: grid;
-  place-items: center; }
+  place-items: center;
+  background-image: url("/img/mainback.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 header, .shop, #my-orders, .reg-form, #reg-form, .cart, footer {
   background-color: #6c7d88;
@@ -75,9 +77,12 @@ h1 {
     color: #ff6f61;
     transform: scale(1.1); }
 
-button {
-  background-color: #ff6f61;
-  color: white;
+button, .cart-button {
+  background-image: url("/img/button-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -88,10 +93,10 @@ button {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s; }
-  button:hover {
+  button:hover, .cart-button:hover {
     background-color: #ff412e;
     transform: scale(1.05); }
-  button:active {
+  button:active, .cart-button:active {
     background-color: #ff9d94;
     transform: scale(0.95); }
 
@@ -100,7 +105,7 @@ button {
   padding: 10px 20px;
   margin-top: 0;
   background-color: #4caf50;
-  color: white;
+  color: black;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -250,12 +255,13 @@ button {
 #user-table > table:nth-child(2) {
   text-align: initial; }
 
-body > header:nth-child(1) > h1:nth-child(2) {
-  margin-left: -30px; }
-
 #name, #quantity, #comments, #first-name, #destination,
 #last-name, #address, #email, #birthdate, #city,
 #shipping-location {
-  background-color: #e9edf8; }
+  background-image: url("/img/form-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */
