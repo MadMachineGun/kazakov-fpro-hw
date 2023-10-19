@@ -5,9 +5,21 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="weather">
+    <h2>Погода в <span id="city"></span></h2>
+    <p>Температура: <span id="temperature"></span>°C</p>
+    <p>Тиск: <span id="pressure"></span> гПа</p>
+    <p>Опис: <span id="description"></span></p>
+    <p>Вологість: <span id="humidity"></span>%</p>
+    <p>Швидкість вітру: <span id="wind-speed"></span> м/с</p>
+    <p>Напрям вітру: <span id="wind-direction"></span>°</p>
+    <img id="weather-icon" src="" alt="Погодний значок">
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
