@@ -40,29 +40,31 @@ h2 {
   flex-direction: column;
   align-items: center;
   margin-top: 20px; }
-
-.option {
-  flex: 1;
-  margin: 10px;
-  text-align: center; }
-
-button {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin: 5px;
-  width: 55px; }
-
-button:hover {
-  background-color: #e74c3c; }
+  .hamburger-options .option {
+    flex: 1;
+    margin: 10px;
+    text-align: center; }
+    .hamburger-options .option button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 5px;
+      width: 50px; }
+      .hamburger-options .option button:hover {
+        background-color: #e74c3c; }
+      .hamburger-options .option button.plus {
+        background-color: #3498db; }
+        .hamburger-options .option button.plus:hover {
+          background-color: #27ae60; }
 
 .result {
   text-align: center;
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-weight: bold; }
 
 .size-group, .stuffing-group, .toppings-group {
   border: 2px solid #3498db;
@@ -81,6 +83,21 @@ button:hover {
 
 #small, #large, #cheese, #salad, #potato, #spice, #mayo {
   width: 35px;
+  font-size: 20px;
+  text-align: center; }
+
+#clear {
+  background-color: rgba(114, 111, 111, 0.61);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 5px;
+  width: 65px;
   font-size: 20px; }
+  #clear:hover {
+    background-color: #d62c1a; }
 
 /*# sourceMappingURL=styles.css.map */
