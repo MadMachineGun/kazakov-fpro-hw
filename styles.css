@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  background-color: #ecf0f1;
+  margin: 0;
+  padding: 0;
+  background-image: url("/img/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  body .container {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px; }
+    body .container h1 {
+      text-align: center;
+      color: #3498db; }
+    body .container form {
+      text-align: center;
+      margin-top: 20px;
+      display: contents; }
+    body .container label {
+      display: block;
+      margin-bottom: 20px;
+      font-weight: bold; }
+    body .container input[type="number"] {
+      padding: 5px;
+      width: 150px;
+      font-size: 16px;
+      margin: 10px auto; }
+    body .container button[type="submit"] {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s; }
+      body .container button[type="submit"]:hover {
+        background-color: #e74c3c; }
+    body .container #clear {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 5px;
+      width: 65px;
+      font-size: 20px; }
+      body .container #clear:hover {
+        background-color: #d62c1a; }
+    body .container button#getComments, body .container button#reloadPage {
+      background-color: #3498db;
+      color: #fff;
+      border: solid 1px;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 5px;
+      width: 158px;
+      font-size: 18px;
+      text-align: center; }
+      body .container button#getComments:hover, body .container button#reloadPage:hover {
+        background-color: #27ae60; }
+  body #postInfo > p:nth-child(3) {
+    margin-bottom: 20px;
+    text-align: justify; }
+  body #postInfo > h2:nth-child(1) {
+    color: #e74c3c; }
+  body #postInfo > h2:nth-child(1),
+  body #postInfo > h2:nth-child(2) {
+    margin-bottom: 10px; }
+
+.container > form:nth-child(1) > button:nth-child(3) {
+  font-size: 19px; }
+
+/*# sourceMappingURL=styles.css.map */
