@@ -3,17 +3,17 @@
 class Hamburger {
     constructor() {
         this.size = {
-            small: { price: 50, calories: 120 },
-            large: { price: 100, calories: 180 }
+            small: {price: 50, calories: 120},
+            large: {price: 100, calories: 180}
         };
         this.stuffings = {
-            cheese: { price: 15, calories: 40 },
-            salad: { price: 20, calories: 5 },
-            potato: { price: 15, calories: 50 }
+            cheese: {price: 15, calories: 40},
+            salad: {price: 20, calories: 5},
+            potato: {price: 15, calories: 50}
         };
         this.toppings = {
-            mayo: { price: 10, calories: 75 },
-            spice: { price: 10, calories: 0 }
+            mayo: {price: 10, calories: 75},
+            spice: {price: 10, calories: 0}
         };
         this.quantity = {
             small: 0,
@@ -100,11 +100,12 @@ const caloriesElement = document.getElementById('calories');
 const priceElement = document.getElementById('price');
 
 function updateResult() {
-    // const quantity = hamburger.quantity;
     const calories = hamburger.calculateCalories();
     const price = hamburger.calculatePrice();
+    const priceString = price.toFixed(2) + ' ₴';
+
     caloriesElement.textContent = calories;
-    priceElement.textContent = price;
+    priceElement.textContent = priceString;
 }
 
 const hamburger = new Hamburger();
