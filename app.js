@@ -6,7 +6,7 @@ const user =
         id: 3
     }
 const contact = {
-    telegram: `Vortex`
+    telegram: `@Vortex`
 }
 
 
@@ -15,6 +15,7 @@ http.createServer(function (request, response) {
     response.setHeader("content-Type", "application/json; charset=utf-8;");
     response.setHeader(`Access-Control-Allow-Origin`, `*`);
     response.setHeader(`Access-Control-Allow-Methods`, `GET, POST`);
+    response.setHeader();
     response.setHeader();
     switch (url) {
         case `/`:
