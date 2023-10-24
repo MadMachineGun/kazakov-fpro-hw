@@ -1,4 +1,4 @@
-const {src, dest, watch} = require(`gulp`);
+const {src, dest, watch, parallel} = require(`gulp`);
 const scss = require('gulp-sass')(require('sass'));
 const concat = require(`gulp-concat`);
 const uglify = require(`gulp-uglify-es`).default;
@@ -30,7 +30,10 @@ function browserAutoUpdate() {
     browserSync.init({
         server: {
             baseDir: "app"
-        }
+        },
+        // files: [
+        //     "app/css/*.css"
+        // ]
     });
 }
 
@@ -38,3 +41,5 @@ exports.convertScss = convertScss;
 exports.convertJS = convertJS;
 exports.watching = watching;
 exports.browserAutoUpdate = browserAutoUpdate;
+
+exports.default = parallel(convertScss, convertJS, browserAutoUpdate, watching);
