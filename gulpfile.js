@@ -1,4 +1,4 @@
-const {src, dest} = require(`gulp`);
+const {src, dest, watch} = require(`gulp`);
 const scss = require('gulp-sass')(require('sass'));
 const concat = require(`gulp-concat`);
 const uglify = require(`gulp-uglify-es`).default;
