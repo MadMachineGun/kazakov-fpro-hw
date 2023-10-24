@@ -18,5 +18,11 @@ function convertJS() {
         .pipe(dest(`app/js`));
 }
 
+function watching() {
+    watch([`app/js/main.js`], convertJS);
+    watch([`app/scss/styles.scss`], convertScss);
+}
+
 exports.convertScss = convertScss;
 exports.convertJS = convertJS;
+exports.watching = watching;
