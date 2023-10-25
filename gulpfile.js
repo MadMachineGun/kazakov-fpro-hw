@@ -1,8 +1,9 @@
-const {src, dest, watch, parallel} = require(`gulp`);
+const {src, dest, watch, parallel, series} = require(`gulp`);
 const scss = require('gulp-sass')(require('sass'));
 const concat = require(`gulp-concat`);
 const uglify = require(`gulp-uglify-es`).default;
 const browserSync = require('browser-sync').create();
+const clean = require('gulp-clean');
 
 function convertScss() {
     return src(`app/scss/styles.scss`)
@@ -33,15 +34,27 @@ function browserAutoUpdate() {
         server: {
             baseDir: "app"
         },
-        // files: [
-        //     "app/css/*.css"
-        // ]
     });
+}
+
+function clearDist() {
+    return src(`dist`).pipe(clean());
+}
+
+function createBuild() {
+   return src([
+        `app/css/style.min.css`,
+        `app/js/main.min.js`,
+        `app/*.html`
+    ], {base: `app`})
+        .pipe(dest(`dist`));
 }
 
 exports.convertScss = convertScss;
 exports.convertJS = convertJS;
 exports.watching = watching;
 exports.browserAutoUpdate = browserAutoUpdate;
+exports.createBuild = createBuild;
 
+exports.build = series(clearDist, createBuild);
 exports.default = parallel(convertScss, convertJS, browserAutoUpdate, watching);
