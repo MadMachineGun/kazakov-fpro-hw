@@ -24,6 +24,8 @@ function convertJS() {
 function watching() {
     watch([`app/js/main.js`], convertJS);
     watch([`app/scss/styles.scss`], convertScss);
+    watch([`app/index.html`])
+        .on('change', browserSync.reload);
 }
 
 function browserAutoUpdate() {
