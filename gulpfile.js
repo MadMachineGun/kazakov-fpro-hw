@@ -6,7 +6,7 @@ const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 
 function convertScss() {
-    return src(`app/scss/styles.scss`)
+    return src([`app/scss/styles.scss`, `app/scss/button.scss`])
         .pipe(concat(`style.min.css`))
         .pipe(scss({outputStyle: `compressed`}))
         .pipe(dest(`app/css`))
